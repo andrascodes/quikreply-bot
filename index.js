@@ -1,19 +1,34 @@
 'use strict'
 
 const config = require('./config')
-const bot = require('./server')
-const db = require('./server/models')
+const serverFactory = require('./server')
+const dbFactory = require('./db')
 
-async function main({ port, db, config }) {
-
-  const syncDb = await db.sequelize.sync(config.dbOptions)
-
-  bot.start(port, `Express app is listening at \n${config.serverUrl}`)
+const fbConfig = {
+  pageId: config.pageId,
+  accessToken: config.accessToken,
+  verifyToken: config.verifyToken,
+  appSecret: config.appSecret,
 }
+
+// Setup DB connection
+const db = dbFactory(config.databaseUrl)
+const botServer = serverFactory(db, fbConfig)
 
 // process.env.PORT lets the port to be set by Heroku
 main({ 
   port: process.env.PORT,
   db,
-  config
+  dbOptions: config.dbOptions,
+  botServer,
+  serverUrl: config.serverUrl
 })
+
+async function main({ port, db, dbOptions, botServer, serverUrl }) {
+  
+  if(db) {
+    await db.sequelize.sync(dbOptions)
+  }
+
+  botServer.start(port, `Express app is listening at \n${serverUrl}`)
+}

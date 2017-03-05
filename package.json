@@ -32,6 +32,7 @@
     "express": "^4.15.0",
     "node-fetch": "^1.6.3",
     "pg": "^6.1.2",
-    "sequelize": "^3.30.2"
+    "sequelize": "^3.30.2",
+    "underscore": "^1.8.3"
   }
 }
