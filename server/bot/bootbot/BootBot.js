@@ -392,7 +392,9 @@ class BootBot extends EventEmitter {
       }
     });
 
-    this.app.post('/webhook', (req, res) => {
+    this.app.post('/webhook', 
+                 bodyParser.json({ verify: this._verifyRequestSignature.bind(this) }),
+                 (req, res) => {
       var data = req.body;
       if (data.object !== 'page') {
         return;

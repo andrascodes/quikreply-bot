@@ -1,13 +1,21 @@
 'use strict'
 
-module.exports = ({
-  BootBot: require('./bootbot/BootBot'),
-  
-  // The order of the modules can determines the incoming message's flow
-  modules: [
-    require('./modules/incoming'),
-    require('./modules/outgoingButton'),
-    require('./modules/outgoingList'),
-    require('./modules/outgoingTemplate')
-  ]
-})
+const BootBot = require('./bootbot/BootBot')
+const modules = require('./modules')
+const Analytics = require('./analytics')
+
+module.exports = (app, db, { pageId, accessToken, verifyToken, appSecret }) => {
+  const bot = new BootBot({
+    pageId,
+    accessToken,
+    verifyToken,
+    appSecret,
+    app: app,
+    analytics: Analytics(db)
+  })
+
+  // Add the modules to the bot instance
+  modules.map(module => bot.module(module))
+
+  return bot
+}
