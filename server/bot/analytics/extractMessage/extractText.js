@@ -67,5 +67,5 @@ const elementToText = elem =>
   `${elem.title} ${elem.subtitle} ${elem.buttons.map(buttonToText)}`
 
 const listTemplateToText = msg => 
-  `List: ${msg.message.attachment.payload.elements.map(elementToText)} 
-         ${msg.message.attachment.payload.buttons.map(buttonToText)}`
+  `List: ${msg.message.attachment.payload.elements.map(elementToText)} ` +
+         `${msg.message.attachment.payload.buttons.map(buttonToText)}`
