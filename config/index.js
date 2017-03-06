@@ -17,10 +17,12 @@ const env = process.env.NODE_ENV || 'development'
 if (env === 'production') {
   config.databaseUrl = process.env.DATABASE_URL
   config.serverUrl = `${process.env.HEROKU_SERVER_URL}/`
+  config.nlpApiUrl = process.env.NLPAPI_URL
 }
 else {
   config.databaseUrl = process.env.LOCAL_DATABASE_URL
   config.serverUrl = `${process.env.LOCAL_SERVER_URL}:${process.env.PORT}/`
+  config.nlpApiUrl = process.env.NLPAPI_URL
 }
 
 // Set if the DB should be Resynced on start

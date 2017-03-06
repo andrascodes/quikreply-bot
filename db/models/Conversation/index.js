@@ -44,6 +44,22 @@ module.exports = function Conversation(sequelize, DataTypes) {
           .then(([res]) => resolve(res.get('lastMessageAt')))
           .catch(error => reject(error))
         })
+      },
+
+      getText: function() {
+        return new Promise((resolve, reject) => {
+          this.getMessages({
+            attributes: ['text'],
+            order: [['timestamp', 'ASC']]
+          })
+          .then(msgs => msgs.map(msg => msg.get('text')))
+          .then(texts => texts.reduce(
+            (accumulator, current) => accumulator.concat(` ${current}`), 
+            ''
+          ))
+          .then(res => resolve(res))
+          .catch(error => reject(error))
+        })
       }
 
     },

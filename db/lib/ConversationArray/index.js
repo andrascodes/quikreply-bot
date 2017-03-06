@@ -1,11 +1,10 @@
 'use strict'
 
 const _ = require('underscore')
-const fetch = require('node-fetch')
 
-function ConversationArray() {
+const createConversationArray = fetch => nlpApiUrl => {
   // const _thirtyMinutes = 1800000
-  const _thirtyMinutes = 30000
+  const _thirtyMinutes = 3000
   const _conversations = {}
 
   const _endConversation = participantId => async () => {
@@ -15,10 +14,23 @@ function ConversationArray() {
 
       const endTimestamp = await convo.findEndtimestamp()
       
-      // const convoText = await convo.getText()
-      // const clusterLabel = await fetch(nlpUrl, { text: convoText })
+      const convoText = await convo.getText()
+      let clusterLabel = await fetch(`${nlpApiUrl}/cluster`, {
+        method: 'POST',
+        body: JSON.stringify({ text: convoText }),
+        headers: { 
+          'Content-Type': 'application/json',
+        }
+      })
+      clusterLabel = await clusterLabel.json()
+      clusterLabel = clusterLabel.label.reduce((acc, curr) => (acc.concat(` ${curr}`, '')))
+      // TODO
+      // const errors = await convo.getErrors()
 
-      await convo.update({ endTimestamp })
+      await convo.update({ 
+        endTimestamp,
+        clusterLabel
+      })
 
       delete _conversations[participantId]
       console.log(`Conversation with ${convo.participant} has ended` +
@@ -65,4 +77,4 @@ function ConversationArray() {
   })
 }
 
-module.exports = ConversationArray
+module.exports = createConversationArray

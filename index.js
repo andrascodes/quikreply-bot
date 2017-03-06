@@ -12,7 +12,7 @@ const fbConfig = {
 }
 
 // Setup DB connection
-const db = dbFactory(config.databaseUrl)
+const db = dbFactory(config.databaseUrl, config.nlpApiUrl)
 const botServer = serverFactory(db, fbConfig)
 
 // process.env.PORT lets the port to be set by Heroku
