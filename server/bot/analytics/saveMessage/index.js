@@ -1,10 +1,30 @@
 'use strict'
 
-const saveMessage = db => async message => {
+const saveMessage = fetch => (db, nlpApiUrl) => async message => {
 
   const MessageModel = db.Message
   const ConversationModel = db.Conversation
   const activeConversations = db.activeConversations
+
+  const createGetSentiment = (fetch, nlpApiUrl) => async messageText => {
+    try {
+      let sentiment = await fetch(`${nlpApiUrl}/sentiment`, {
+        method: 'POST',
+        body: JSON.stringify({ text: messageText }),
+        headers: { 
+          'Content-Type': 'application/json',
+        }
+      })
+      sentiment = await sentiment.json()
+
+      return sentiment.sentiment
+    }
+    catch(error) {
+      console.error(error)
+      return null
+    }
+  }
+  const getSentiment = createGetSentiment(fetch, nlpApiUrl)
 
   if(message.type === 'echo') {
     return ({
@@ -79,6 +99,10 @@ const saveMessage = db => async message => {
 
       try {
         const msg = await conversation.createMessage(message)
+        const sentiment = await getSentiment(message.text)
+        await msg.update({
+          sentiment
+        })
 
         console.log(`Message '${message.id}' with type '${message.type}' has been logged`)
         return ({
@@ -100,6 +124,10 @@ const saveMessage = db => async message => {
         activeConversations.saveConversation(convo)
         
         const msg = await convo.createMessage(message)
+        const sentiment = await getSentiment(message.text)
+        await msg.update({
+          sentiment
+        })
 
         console.log(`Message '${message.id}' with type '${message.type}' has been logged`)
         return ({ 

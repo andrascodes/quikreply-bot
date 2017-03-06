@@ -7,14 +7,8 @@ const createConversationArray = fetch => nlpApiUrl => {
   const _thirtyMinutes = 3000
   const _conversations = {}
 
-  const _endConversation = participantId => async () => {
-    
+  const createGetCluster = (fetch, nlpApiUrl) => async convoText => {
     try {
-      const convo = _conversations[participantId].instance
-
-      const endTimestamp = await convo.findEndtimestamp()
-      
-      const convoText = await convo.getText()
       let clusterLabel = await fetch(`${nlpApiUrl}/cluster`, {
         method: 'POST',
         body: JSON.stringify({ text: convoText }),
@@ -24,15 +18,33 @@ const createConversationArray = fetch => nlpApiUrl => {
       })
       clusterLabel = await clusterLabel.json()
       clusterLabel = clusterLabel.label.reduce((acc, curr) => (acc.concat(` ${curr}`, '')))
-      // TODO
-      // const errors = await convo.getErrors()
+      return clusterLabel
+    }
+    catch(error) {
+      console.error(error)
+      return null
+    }
+  }
+  const getCluster = createGetCluster(fetch, nlpApiUrl)
 
-      await convo.update({ 
-        endTimestamp,
-        clusterLabel
-      })
+  const _endConversation = participantId => async () => {
+    
+    try {
+      const convo = _conversations[participantId].instance
 
       delete _conversations[participantId]
+
+      const endTimestamp = await convo.findEndtimestamp()
+      const convoText = await convo.getText()
+      const clusterLabel = await getCluster(convoText)
+      const errors = await convo.getErrors()
+      
+      await convo.update({ 
+        endTimestamp,
+        clusterLabel,
+        errors
+      })
+
       console.log(`Conversation with ${convo.participant} has ended` +
                     ` at ${convo.endTimestamp.getHours()}:${convo.endTimestamp.getMinutes()}`)
     }

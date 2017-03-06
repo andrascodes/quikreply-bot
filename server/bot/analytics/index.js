@@ -1,7 +1,8 @@
 'use strict'
 
 const extract = require('./extractMessage')
-const createSaveMessage = require('./saveMessage')
+const fetch = require('node-fetch')
+const createSaveMessage = require('./saveMessage')(fetch)
 
 const logIncoming = saveMessage => msg => {
   
@@ -28,7 +29,7 @@ const logOutgoing = saveMessage => (msg, res) => {
   }
 }
 
-module.exports = db => ({
-  logIncoming: logIncoming(createSaveMessage(db)),
-  logOutgoing: logOutgoing(createSaveMessage(db))
+module.exports = (db, nlpApiUrl) => ({
+  logIncoming: logIncoming(createSaveMessage(db, nlpApiUrl)),
+  logOutgoing: logOutgoing(createSaveMessage(db, nlpApiUrl))
 })
