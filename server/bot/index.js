@@ -5,13 +5,19 @@ const modules = require('./modules')
 const Analytics = require('./analytics')
 
 module.exports = (app, db, { pageId, accessToken, verifyToken, appSecret }, nlpApiUrl) => {
+
+  let analytics = undefined
+  if(db) {
+    analytics = Analytics(db, nlpApiUrl)
+  }
+
   const bot = new BootBot({
     pageId,
     accessToken,
     verifyToken,
     appSecret,
     app: app,
-    analytics: Analytics(db, nlpApiUrl)
+    analytics 
   })
 
   // Add the modules to the bot instance
