@@ -20,7 +20,7 @@ if (env === 'production') {
   config.nlpApiUrl = process.env.NLPAPI_URL
 }
 else {
-  config.databaseUrl = process.env.LOCAL_DATABASE_URL
+  config.databaseUrl = process.env.DATABASE_URL
   config.serverUrl = `${process.env.LOCAL_SERVER_URL}:${process.env.PORT}/`
   config.nlpApiUrl = process.env.NLPAPI_URL
 }
