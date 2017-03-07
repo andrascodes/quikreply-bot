@@ -78,6 +78,14 @@ module.exports = function Conversation(sequelize, DataTypes) {
             (accumulator, current) => accumulator.concat(`${current} `), 
             ''
           ))
+          .then(errors => {
+            if(errors === "") {
+              return null
+            }
+            else {
+              return errors
+            }
+          })
           .then(res => resolve(res))
           .catch(error => reject(error))
         })
