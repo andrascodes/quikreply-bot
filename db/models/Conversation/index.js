@@ -75,7 +75,7 @@ module.exports = function Conversation(sequelize, DataTypes) {
           })
           .then(msgs => msgs.map(msg => msg.get('error')))
           .then(errors => errors.reduce(
-            (accumulator, current) => accumulator.concat(` ${current}`), 
+            (accumulator, current) => accumulator.concat(`${current} `), 
             ''
           ))
           .then(res => resolve(res))

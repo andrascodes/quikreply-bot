@@ -1,6 +1,8 @@
 'use strict'
 
 const bodyParser = require('body-parser')
+const createGetConversationsHandler = require('./conversations/get')
+const createPutConversationsHandler = require('./conversations/put')
 
 module.exports = (db, router) => {
 
@@ -12,6 +14,9 @@ module.exports = (db, router) => {
       result: 'success'
     })
   })
+
+  router.get('/conversations', createGetConversationsHandler(db))
+  router.put('/conversations', createPutConversationsHandler(db))
 
   return router
 }
