@@ -2,23 +2,21 @@
 
 const createGetConversationsHandler = db => async (req, res) => {
   const ConversationModel = db.Conversation
-  const MessageModel = db.Message
 
   try {
-    const conversationsWithMessages = await ConversationModel.findAll({
-      include: [{ model: MessageModel }],
-      order: [ [MessageModel, 'timestamp', 'ASC'] ]
+    const conversations = await ConversationModel.findAll({
+      // where: {
+      //   display: true
+      // },
+      attributes: [ 'id', 'participant', ['startTimestamp', 'start'], ['endTimestamp', 'end'] ],
+      order: [[ 'startTimestamp', 'DESC' ]]
     })
 
-    const response = conversationsWithMessages.map(convo => {
-      
-      const messageString = convo.messages.reduce( (accumulator, current) => 
-        accumulator.concat(`${current.text} `), '')
+    const errors = await Promise.all(conversations.map(convo => convo.getErrors()))
 
-      return ({
-        id: convo.id,
-        messages: messageString
-      })
+    const response = conversations.map((convo, ind) => {
+      convo.errors = errors[ind]
+      return convo
     })
 
     return res.status(200).json({ data: response })

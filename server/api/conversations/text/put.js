@@ -2,7 +2,7 @@
 
 const _ = require('underscore')
 
-const createPutConversationsHandler = db => async (req, res) => {
+const createPutConversationsTextHandler = db => async (req, res) => {
   const ConversationModel = db.Conversation
 
   try {
@@ -34,4 +34,4 @@ const createPutConversationsHandler = db => async (req, res) => {
 
 }
 
-module.exports = createPutConversationsHandler;
+module.exports = createPutConversationsTextHandler;
