@@ -1,0 +1,43 @@
+.Sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 160px;
+  width: 160px;
+  height: 100%;
+  margin-left: -160px;
+  overflow-y: auto;
+  background: #464646;
+}
+
+.Sidebar-Links {
+    position: absolute;
+    top: 0;
+    width: 160px;
+    margin: 50px 0 0 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.Sidebar-Links li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.Link {
+    display: block;
+    text-decoration: none;
+    color: #c5c5c5;
+}
+
+.Link:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.Link:active,
+.Link:focus {
+    text-decoration: none;
+    color: #fff;
+}
