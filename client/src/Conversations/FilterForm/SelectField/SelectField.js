@@ -11,6 +11,7 @@ export const SelectField = props => {
         name={props.name} 
         id={props.name}
         onChange={props.handleChange}
+        defaultValue={props.defaultValue}
       >
         {options}
       </select>
@@ -25,5 +26,6 @@ SelectField.PropTypes = {
   })).isRequired,
   name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,
-  handleChange: React.PropTypes.func.isRequired
+  handleChange: React.PropTypes.func.isRequired,
+  defaultValue: React.PropTypes.string
 }

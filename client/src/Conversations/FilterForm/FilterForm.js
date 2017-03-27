@@ -8,20 +8,23 @@ import { SelectField as LabelSelector, SelectField as ErrorSelector } from './Se
 
 export const FilterForm = props => (
   <div className="FilterForm">
-    <form className="container-fluid">
+    <div className="container-fluid">
       <div className="row">
         <div className="col-sm-6 col-md-6 col-lg-6 text-center">
           <ParticipantSearch 
-            options={[]}
-            handleInput={() => {}}
+            options={props.participantList}
+            handleInput={props.handleParticipantInput}
+            defaultParticipantValue={props.defaultParticipantValue}
           />
         </div>
         <div className="col-sm-6 col-md-6 col-lg-6 text-center">
           <DateRangePicker 
-            minStartDate="2017-03-22"
-            maxEndDate="2017-03-31"
-            handleStartInput={() => {}}
-            handleEndInput={() => {}}
+            minStartDate={props.minStartDate}
+            maxEndDate={props.maxEndDate}
+            defaultStartValue={props.defaultStartValue}
+            defaultEndValue={props.defaultEndValue}
+            handleStartInput={props.handleStartInput}
+            handleEndInput={props.handleEndInput}
           />
         </div>
       </div>
@@ -30,27 +33,23 @@ export const FilterForm = props => (
           <LabelSelector 
             name="clusterLabelSelector"
             label="Label:"
-            options={[{
-              value: 1,
-              text: 'text'
-            }]}
-            handleChange={() => {}}
+            options={props.labelOptions}
+            handleChange={props.handleLabelChange}
+            defaultValue={props.defaultLabelValue}
           />
         </div>
         <div className="col-sm-6 col-md-6 col-lg-6 text-center">
           <ErrorSelector 
             name="errorSelector"
             label="Error:"
-            options={[{
-              value: 1,
-              text: 'text'
-            }]}
-            handleChange={() => {}}
+            options={props.errorOptions}
+            handleChange={props.handleErrorChange}
+            defaultValue={props.defaultErrorValue}
           />
         </div>  
       </div>
       
-    </form>
+    </div>
 
   </div>
 )
@@ -58,12 +57,18 @@ export const FilterForm = props => (
 FilterForm.PropTypes = {
   participantList: React.PropTypes.array.isRequired,
   handleParticipantInput: React.PropTypes.func.isRequired,
+  defaultParticipantValue: React.PropTypes.string,
+
   minStartDate: React.PropTypes.string,
   maxEndDate: React.PropTypes.string,
   handleStartInput: React.PropTypes.func.isRequired,
   handleEndInput: React.PropTypes.func.isRequired,
+
   labelOptions: React.PropTypes.array.isRequired,
   handleLabelChange: React.PropTypes.func.isRequired,
+  defaultLabelValue: React.PropTypes.string,
+
   errorOptions: React.PropTypes.array.isRequired,
-  handleErrorChange: React.PropTypes.func.isRequired
+  handleErrorChange: React.PropTypes.func.isRequired,
+  defaultErrorValue: React.PropTypes.string,
 }

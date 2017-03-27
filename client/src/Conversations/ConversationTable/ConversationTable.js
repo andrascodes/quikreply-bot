@@ -17,8 +17,9 @@ export const ConversationTable = props => {
       <thead>
         <tr>
           <th>participant</th>
-          <th>start</th>
+          <th>date</th>
           <th>duration</th>
+          <th>label</th>
           <th>errors</th>
         </tr>
       </thead>

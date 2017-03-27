@@ -7,6 +7,7 @@ export const ConversationRow = props => (
     <td>{props.participant}</td>
     <td>{formatDate(props.start)}</td>
     <td>{calculateDuration(props.start, props.end)}</td>
+    <td>{props.label}</td>
     <td>{props.errors}</td>
   </tr>
 )

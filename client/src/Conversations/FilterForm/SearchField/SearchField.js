@@ -9,7 +9,7 @@ export const SearchField = props => {
       <label htmlFor="participants" className="SearchLabel">Participant:</label>
       <input list="participants" className="SearchInput" 
         onInput={props.handleInput} 
-        defaultValue={props.defaultValue}
+        defaultValue={props.defaultParticipantValue}
       />
       <datalist id="participants">
         {listOptions}
@@ -21,5 +21,5 @@ export const SearchField = props => {
 SearchField.propTypes = {
   options: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
   handleInput: React.PropTypes.func.isRequired,
-  defaultValue: React.PropTypes.string
+  defaultParticipantValue: React.PropTypes.string
 }
