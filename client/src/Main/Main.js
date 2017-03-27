@@ -4,8 +4,6 @@ import './Main.css'
 
 export const Main = props => (
   <div className="Main">
-    <div className="container-fluid">
-      {props.children}
-    </div>
+    {props.children}
   </div>
 )
