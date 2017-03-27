@@ -8,7 +8,7 @@ const createGetConversationsHandler = db => async (req, res) => {
       // where: {
       //   display: true
       // },
-      attributes: [ 'id', 'participant', ['startTimestamp', 'start'], ['endTimestamp', 'end'] ],
+      attributes: [ 'id', 'participant', ['startTimestamp', 'start'], ['endTimestamp', 'end'], ['clusterLabel', 'label'] ],
       order: [[ 'startTimestamp', 'DESC' ]]
     })
 

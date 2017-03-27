@@ -73,6 +73,7 @@ module.exports = function Conversation(sequelize, DataTypes) {
             attributes: ['error'],
             order: [['timestamp', 'ASC']]
           })
+          // TODO: Get error and sentiment and delivered, not delivered as well and reduce that
           .then(msgs => msgs.map(msg => msg.get('error')))
           .then(errors => errors.reduce(
             (accumulator, current) => accumulator.concat(`${current} `), 
