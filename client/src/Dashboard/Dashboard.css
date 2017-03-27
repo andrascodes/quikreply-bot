@@ -1,0 +1,11 @@
+.Dashboard {
+  margin-top: 2em;
+}
+
+.Chart > div {
+  margin: auto;
+}
+
+.TotalErrors {
+  margin-top: -2em;
+}
