@@ -1,0 +1,7 @@
+.MessageHeader {
+  padding: 2em;
+  border-bottom: 0.1em solid rgba(0, 0, 0, .10);
+  margin-bottom: 1em;
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+}
