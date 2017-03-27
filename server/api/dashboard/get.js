@@ -1,48 +1,62 @@
 'use strict'
 
+const moment = require('moment')
+const { reduceEachToData, completeWithMissingMonths } = require('./lib')
+
 const createGetConversationsHandler = db => async (req, res) => {
   const ConversationModel = db.Conversation
   const MessageModel = db.Message
   const sequelize = db.sequelize
 
   try {
-    const getTodaysDate = () => {
-      const today = new Date()
+    const getDateAMonthAgo = () => moment().subtract(1, 'months').format('YYYY-MM-DD')
 
-      return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
-    }
-
-    const getDateAMonthAgo = () => {
-      const today = new Date()
-      const monthAgo = new Date(today.setMonth(today.getMonth() - 1))
-
-      return `${monthAgo.getFullYear()}-${monthAgo.getMonth()+1}-${monthAgo.getDate()}`
-    }
+    const getDateTwoMonthsAgo = () => moment().subtract(2, 'months').format('YYYY-MM-DD')
 
     const dashboardQueries = await Promise.all([
       // totalUsers
       sequelize.query( "SELECT COUNT(DISTINCT participant) AS data FROM conversations", { type: sequelize.QueryTypes.SELECT} ),
-      // totalMessages
-      sequelize.query( "SELECT COUNT(*) AS data FROM messages", { type: sequelize.QueryTypes.SELECT} ),
-      // dailyActiveUsers
+      // activeUsersToday
       sequelize.query( 
         `SELECT COUNT(DISTINCT participant) AS data FROM conversations WHERE DATE("startTimestamp") = ?`,
         { 
-          replacements: [getTodaysDate()], 
+          replacements: [moment().format('YYYY-MM-DD')], 
           type: sequelize.QueryTypes.SELECT
         } 
       ),
-      // monthlyActiveUsers
+      // activeUsersYesterday
+      sequelize.query( 
+        `SELECT COUNT(DISTINCT participant) AS data FROM conversations WHERE DATE("startTimestamp") = ?`,
+        { 
+          replacements: [moment().subtract(1, 'days').format('YYYY-MM-DD')], 
+          type: sequelize.QueryTypes.SELECT
+        } 
+      ),
+      // activeUsersLastMonth
       sequelize.query( 
         `SELECT COUNT(DISTINCT participant) AS data  FROM conversations WHERE "startTimestamp" BETWEEN :monthAgo AND :now`,
         { 
           replacements: {
-            monthAgo: getDateAMonthAgo(),
-            now: getTodaysDate()
+            monthAgo: moment().subtract(1, 'months').format('YYYY-MM-DD'),
+            now: moment().format('YYYY-MM-DD')
           }, 
           type: sequelize.QueryTypes.SELECT
         } 
       ),
+      // activeUsersTwoMonthsAgo
+      sequelize.query( 
+        `SELECT COUNT(DISTINCT participant) AS data  FROM conversations WHERE "startTimestamp" BETWEEN :twoMonthsAgo AND :monthAgo`,
+        { 
+          replacements: {
+            twoMonthsAgo: moment().subtract(2, 'months').format('YYYY-MM-DD'),
+            monthAgo: moment().subtract(1, 'months').format('YYYY-MM-DD')
+          }, 
+          type: sequelize.QueryTypes.SELECT
+        } 
+      ),
+
+      // totalMessages
+      sequelize.query( "SELECT COUNT(*) AS data FROM messages", { type: sequelize.QueryTypes.SELECT} ),
       // avgMessages
       sequelize.query( 
         `SELECT AVG(count) AS data FROM (SELECT COUNT(*) FROM messages GROUP BY "conversationId") AS "messageCounts"`, 
@@ -79,23 +93,26 @@ const createGetConversationsHandler = db => async (req, res) => {
         { type: sequelize.QueryTypes.SELECT} 
       ),
 
+      // Queries returning an array with multiple elements:
+      // activeUsersByMonth
+      sequelize.query( 
+        `SELECT count(participant), month FROM (
+          SELECT DISTINCT participant, to_char(date_trunc('month', "startTimestamp"), 'YYYY-MM') AS month FROM conversations
+        ) AS activeusers
+        GROUP BY month
+        ORDER BY month ASC`, 
+        { type: sequelize.QueryTypes.SELECT} 
+      ),
+
     ])
 
-    const extractData = array => {
-      const data = array.reduce(x => x).data
-      
-      if(typeof data === 'string') {
-        return Number(data)
-      }
-      return data
-
-    }
-
     const [
-      totalUsers, 
-      totalMessages, 
-      dailyActiveUsers, 
-      monthlyActiveUsers,
+      totalUsers,
+      activeUsersToday,
+      activeUsersYesterday,
+      activeUsersLastMonth,
+      activeUsersTwoMonthsAgo,
+      totalMessages,
       avgMessages,
       avgLength,
       outgoingMessages,
@@ -103,19 +120,32 @@ const createGetConversationsHandler = db => async (req, res) => {
       deliveredNotReadMessages,
       notDeliveredMessages,
       messageErrors
-    ] = dashboardQueries.map(extractData)
-    
+    ] = dashboardQueries.map(reduceEachToData)
+
+    const [ activeUsersData ] = dashboardQueries.slice(-1)
+    const activeUsersByMonth = completeWithMissingMonths(activeUsersData)
+
     return res.status(200).json({
-      totalUsers, 
-      totalMessages, 
-      dailyActiveUsers,
-      monthlyActiveUsers,
-      avgMessages,
-      avgLength,
-      deliveredAndReadRatio: deliveredAndReadMessages / outgoingMessages,
-      deliveredNotReadRatio: deliveredNotReadMessages / outgoingMessages,
-      notDeliveredRatio: notDeliveredMessages / outgoingMessages,
-      messageErrorRatio: messageErrors / outgoingMessages,
+      data: {
+        users: {
+          totalUsers,
+          activeUsersToday,
+          activeUsersYesterday,
+          activeUsersLastMonth,
+          activeUsersTwoMonthsAgo,
+          activeUsersByMonth,
+        },
+        messages: {
+          totalMessages,
+          avgMessages,
+          avgLength: moment(avgLength).format('mm:ss'),
+          outgoingMessages,
+          deliveredAndReadMessages,
+          deliveredNotReadMessages,
+          notDeliveredMessages,
+          messageErrors
+        }
+      }
     })
 
   }
