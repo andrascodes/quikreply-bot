@@ -41,7 +41,7 @@ export class Dashboard extends Component {
     }
   }
   
-  loadDashboard = createServiceApi(fetch, 'http://localhost:5000/api').loadDashboard
+  loadDashboard = createServiceApi(fetch).loadDashboard
 
   componentDidMount() {
     this.loadDashboard()

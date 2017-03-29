@@ -17,7 +17,7 @@ export class Messages extends Component {
     }
   }
 
-  loadMessages = createServiceApi(fetch, 'http://localhost:5000/api/conversations').loadMessages
+  loadMessages = createServiceApi(fetch).loadMessages
 
   componentDidMount() {
     this.loadMessages(this.state.id)
