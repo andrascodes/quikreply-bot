@@ -7,7 +7,7 @@ export const createServiceApi = (fetch) => {
       .then(res => res.data),
     
     loadMessages: id =>
-      fetch(`${baseUrl}/${id}`)
+      fetch(`${baseUrl}/conversations/${id}`)
       .then(res => res.json())
       .then(res => res.data),
 

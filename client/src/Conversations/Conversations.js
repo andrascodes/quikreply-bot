@@ -27,7 +27,6 @@ export class Conversations extends Component {
   loadConversations = createServiceApi(fetch).loadConversations
 
   componentDidMount() {
-    console.log(this.props.location.state)
 
     this.loadConversations()
     .then(conversations => {
