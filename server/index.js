@@ -15,7 +15,7 @@ module.exports = (db, fbConfig, { nlpApiUrl, serverUrl }) => {
 
   app.use(express.static(path.join(__dirname, '/views')))
 
-  app.get('/', (req, res) => {
+  app.get('*', (req, res) => {
     res.render('index', {
       baseUrl: `${serverUrl}/api`
     })
