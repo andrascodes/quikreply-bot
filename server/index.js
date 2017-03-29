@@ -4,6 +4,7 @@ const apiFactory = require('./api')
 const botFactory = require('./bot')
 const express = require('express')
 const path = require('path')
+const url = require('url')
 
 module.exports = (db, fbConfig, { nlpApiUrl, serverUrl }) => {
   const app = express()
@@ -15,7 +16,11 @@ module.exports = (db, fbConfig, { nlpApiUrl, serverUrl }) => {
 
   app.use(express.static(path.join(__dirname, '/views')))
 
-  app.get('*', (req, res) => {
+  app.get('*', (req, res, next) => {
+    if(url.parse(req.url).pathname === '/webhook') {
+      return next()
+    }
+
     res.render('index', {
       baseUrl: `${serverUrl}/api`
     })
