@@ -16,12 +16,12 @@ const env = process.env.NODE_ENV || 'development'
 // Set Database connection URL
 if (env === 'production') {
   config.databaseUrl = process.env.DATABASE_URL
-  config.serverUrl = `${process.env.HEROKU_SERVER_URL}/`
+  config.serverUrl = `${process.env.HEROKU_SERVER_URL}`
   config.nlpApiUrl = process.env.NLPAPI_URL
 }
 else {
   config.databaseUrl = process.env.DATABASE_URL
-  config.serverUrl = `${process.env.LOCAL_SERVER_URL}:${process.env.PORT}/`
+  config.serverUrl = `${process.env.LOCAL_SERVER_URL}:${process.env.PORT}`
   config.nlpApiUrl = process.env.NLPAPI_URL
 }
 
