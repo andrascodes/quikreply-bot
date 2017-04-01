@@ -1,0 +1,25 @@
+.Bubble {
+  margin: auto;
+  margin-bottom: 0.25em;
+  border: 0.1em solid;
+  border-radius: 1em;
+  border-color: rgba(0, 0, 0, 0.1);
+  padding: 0.7em 1em 0.7em 1em;
+}
+
+.ErrorBubble {
+  border: 0.25em solid rgb(255, 102, 102);
+}
+
+.Incoming {
+  background-color: #f1f0f0;
+}
+
+.Outgoing {
+  background-color: #0084ff;
+  color: #fff;
+}
+
+.ImageMessage {
+  border-radius: 1em;
+}

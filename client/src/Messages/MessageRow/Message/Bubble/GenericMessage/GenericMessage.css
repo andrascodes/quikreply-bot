@@ -1,0 +1,15 @@
+.GenericPagingButton {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.GenericPagingButton:hover,
+.GenericPagingButton:active,
+.GenericPagingButton:focus {
+  color: #fff;
+  outline: none;
+}

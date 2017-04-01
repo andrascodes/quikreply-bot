@@ -7,6 +7,7 @@
     "moment": "^2.18.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-tooltip": "^3.2.10",
     "recharts": "^0.21.2"
   },
   "devDependencies": {

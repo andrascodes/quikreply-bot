@@ -1,0 +1,22 @@
+.ButtonMessage {
+  background-color: #fff;
+  color: #000;
+  border-radius: 1em;
+  border: 0.2em solid rgba(0, 0, 0, .10);
+}
+
+.ButtonMessageText {
+  background-color: #f1f0f0;
+  padding: 0.4em;
+  border-radius: 1em 1em 0em 0em;
+}
+
+.ButtonMessageButton {
+  padding: 0.3em 0em;
+  color: #0084ff;
+  font-weight: 500;
+}
+
+.ButtonDataContainer {
+  border-bottom: 0.1em solid rgba(0, 0, 0, .10);
+}

@@ -31,3 +31,6 @@ export const getDateRangeOfList = dates => ({
   startDate: getMinDateFromList(dates),
   endDate: getMaxDateFromList(dates)
 })
+
+export const formatMessageTimestamp = timestamp =>
+  moment(timestamp).format('HH:mm:ss')

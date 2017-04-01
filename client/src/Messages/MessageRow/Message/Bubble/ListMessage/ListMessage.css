@@ -1,0 +1,47 @@
+.ListMessage {
+  background-color: #fff;
+  color: #000;
+  border-radius: 1em;
+  border: 0.2em solid rgba(0, 0, 0, .10);
+}
+
+.ListElementContainer {
+  border-bottom: 0.1em solid rgba(0, 0, 0, .10);
+}
+
+.ListElement {
+  padding: 0.5em;
+}
+
+.ListElementTitle {
+  color: #000;
+  font-weight: bold;
+}
+
+.ListElementSubtitle {
+  color: #999;
+}
+
+.ListElementImage {
+  width: 100px;
+  height: 100px;
+  border: 0.1em solid rgba(0, 0, 0, .10);
+  border-radius: 0.25em;
+}
+
+.ListElementButton {
+  font-size: 13px;
+  padding: 6px 8px 6px 8px;
+  border: 0.1em solid #0084ff;
+  border-radius: 0.25em;
+  color: #0084ff;
+  white-space: nowrap;
+  display: inline-block;
+  margin: 1em 0em;
+}
+
+.ListButton {
+  padding: 0.3em 0em;
+  color: #0084ff;
+  font-weight: 500;
+}

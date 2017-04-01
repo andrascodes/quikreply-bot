@@ -1,0 +1,33 @@
+.GenericElement {
+  background-color: #fff;
+  color: #000;
+  border-radius: 1em;
+  border: 0.2em solid rgba(0, 0, 0, .10);
+}
+
+.GenericElementImage {
+  border-radius: 1em 1em 0em 0em;
+}
+
+.GenericElementTitleContainer {
+  padding: 0.4em;
+}
+
+.GenericElementTitle {
+  color: #000;
+  font-weight: bold;
+}
+
+.GenericElementSubtitle {
+  color: #999;
+}
+
+.GenericElementButton {
+  padding: 0.3em 0em;
+  color: #0084ff;
+  font-weight: 500;
+}
+
+.GenericDataContainer {
+  border-bottom: 0.1em solid rgba(0, 0, 0, .10);
+}
