@@ -13,6 +13,7 @@ const fbConfig = {
 
 // Setup DB connection
 const db = dbFactory(config.databaseUrl, config.nlpApiUrl)
+
 const botServer = serverFactory(db, fbConfig, {
   nlpApiUrl: config.nlpApiUrl,
   serverUrl: config.serverUrl
@@ -30,7 +31,11 @@ main({
 async function main({ port, db, dbOptions, botServer, serverUrl }) {
   
   if(db) {
+    // Sync DB
     await db.sequelize.sync(dbOptions)
+
+    // Add admin User to DB
+    await db.User.create({ username: 'admin', password: 'password' })
   }
 
   botServer.start(port, `Express app is listening at \n${serverUrl}`)

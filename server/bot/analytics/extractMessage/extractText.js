@@ -36,10 +36,6 @@ function extractTextFromMessage(msg, type) {
 }
 
 module.exports = function extractText(msg) {
-  // const getText= {
-  //   'incoming': msg => extractTextFromMessage(msg.message, msg.type),
-  //   'outgoing': msg => extractTextFromMessage(msg.message.message, msg.type)
-  // }[msg.direction]
   
   try {
     if(msg instanceof Error) {

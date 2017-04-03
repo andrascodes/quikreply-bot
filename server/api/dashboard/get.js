@@ -38,7 +38,7 @@ const createGetConversationsHandler = db => async (req, res) => {
         { 
           replacements: {
             monthAgo: moment().subtract(1, 'months').format('YYYY-MM-DD'),
-            now: moment().format('YYYY-MM-DD')
+            now: moment().add(1, 'days').format('YYYY-MM-DD')
           }, 
           type: sequelize.QueryTypes.SELECT
         } 
@@ -49,7 +49,7 @@ const createGetConversationsHandler = db => async (req, res) => {
         { 
           replacements: {
             twoMonthsAgo: moment().subtract(2, 'months').format('YYYY-MM-DD'),
-            monthAgo: moment().subtract(1, 'months').format('YYYY-MM-DD')
+            monthAgo: moment().add(1, 'days').subtract(1, 'months').format('YYYY-MM-DD')
           }, 
           type: sequelize.QueryTypes.SELECT
         } 
@@ -140,7 +140,7 @@ const createGetConversationsHandler = db => async (req, res) => {
           avgMessages,
           avgLength: moment(avgLength).format('mm:ss'),
           outgoingMessages,
-          deliveredAndReadMessages,
+          deliveredAndReadMessages: (deliveredNotReadMessages === 0 && notDeliveredMessages === 0) ? 1 : deliveredAndReadMessages,
           deliveredNotReadMessages,
           notDeliveredMessages,
           messageErrors

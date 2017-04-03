@@ -4,10 +4,16 @@ const _ = require('lodash')
 const moment = require('moment')
 
 const reduceEachToData = array => {
+  if(array.length <= 0) {
+    return 0;
+  }
   const data = array.reduce(x => x).data
   
   if(typeof data === 'string') {
     return Number(data)
+  }
+  if(data === null) {
+    return 0;
   }
   return data
 }

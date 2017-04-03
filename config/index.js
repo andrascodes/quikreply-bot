@@ -7,8 +7,8 @@ const config = {
   appSecret: process.env.FB_APP_SECRET,
 
   // TODO: Secret key for JWT signing and encryption
-  // jwtPassword: 'qwerty098',
-  // cryptoPassword: 'abc123!@#!'
+  jwtPassword: 'qwerty098',
+  cryptoPassword: 'abc123!@#!'
 }
 
 // Check the environment
@@ -22,11 +22,13 @@ if (env === 'production') {
 else {
   config.databaseUrl = process.env.DATABASE_URL
   config.serverUrl = `${process.env.LOCAL_SERVER_URL}:${process.env.PORT}`
-  config.nlpApiUrl = process.env.NLPAPI_URL
+  config.nlpApiUrl = process.env.NLPAPI_URL,
+  process.env.PORT = process.env.SERVER_PORT
 }
 
 // Set if the DB should be Resynced on start
-const resyncDb = process.env.FORCE_DB
+// const resyncDb = process.env.FORCE_DB
+const resyncDb = 'TRUE'
 if (resyncDb && resyncDb.toUpperCase() === 'TRUE') {
   console.log('DB set to resync.')
   config.dbOptions = { force: true }

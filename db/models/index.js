@@ -6,9 +6,10 @@ module.exports = ({ sequelize, conversationArray }) => {
 
   db.Message = sequelize.import(`${__dirname}/Message/index.js`)
   db.Conversation = sequelize.import(`${__dirname}/Conversation/index.js`)
+  db.User = sequelize.import(`${__dirname}/User/index.js`)
+  db.Token = sequelize.import(`${__dirname}/Token/index.js`)
 
   db.sequelize = sequelize
-  // db.Sequelize = Sequelize
 
   db.Message.belongsTo(db.Conversation)
   db.Conversation.hasMany(db.Message)
