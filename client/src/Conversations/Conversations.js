@@ -182,6 +182,10 @@ export class Conversations extends Component {
               conversations={filteredConversationList}
               handleRowClick={this.handleRowClick}
             />
+            {(this.state.conversations.length <= 0) ?
+              <div className="NoConversations text-center">
+                <h2>No conversations to display.</h2>
+              </div> : ''}
           </div>
         </div>
       )

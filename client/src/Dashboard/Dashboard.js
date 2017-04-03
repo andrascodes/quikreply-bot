@@ -15,6 +15,8 @@ import {
   Panel as TotalErrors
 } from './Panel'
 
+import { Error } from '../Error'
+
 export class Dashboard extends Component {
   constructor(props) {
     super(props)
@@ -37,7 +39,8 @@ export class Dashboard extends Component {
         deliveredNotReadMessages: 0,
         notDeliveredMessages: 0,
         messageErrors: 0
-      }
+      },
+      error: false,
     }
   }
   
@@ -50,6 +53,10 @@ export class Dashboard extends Component {
         ...data
       }))
     )
+    .catch(error => {
+      console.log(error)
+      return this.setState(state => ({ error }))
+    })
   }
 
   renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -66,6 +73,12 @@ export class Dashboard extends Component {
   };
 
   render() {
+
+    if(this.state.error) {
+      return (
+        <Error />
+      )
+    }
 
     return (
       <div className="container-fluid">
