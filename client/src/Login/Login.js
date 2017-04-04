@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Alert } from 'react-bootstrap'
 
 import './Login.css'
 
@@ -7,19 +8,20 @@ import { createAuthApi } from '../lib/authApi'
 export class Login extends Component {
 
   state = {
-    email: '',
+    username: '',
     password: '',
-    error: false
+    error: false,
+    alertVisible: false
   }
 
   login = createAuthApi(fetch).login
 
-  handleEmailChange = e => {
+  handleUsernameChange = e => {
     e.persist()
     e.preventDefault()
 
     this.setState(state => ({
-      email: e.target.value
+      username: e.target.value
     }))
   }
   
@@ -36,14 +38,33 @@ export class Login extends Component {
     e.persist()
     e.preventDefault()
 
-    this.login(this.state.email, this.state.password)
+    this.login(this.state.username, this.state.password)
     .then(({ status, token, body }) => {
       localStorage.apiToken = token
-      this.props.history.push(`/`)
+      localStorage.username = body.username
+      localStorage.email = body.email
+
+      let redirectTo = this.props.location
+      while(redirectTo.state) {
+        redirectTo = redirectTo.state.from
+      }
+      redirectTo = redirectTo.pathname
+
+      this.props.history.push(redirectTo === '/login' || redirectTo === '/login/' ? '/' : redirectTo)
     })
-    .catch(error => 
-      this.setState(state => ({ error }))
-    )
+    .catch(error => {
+      console.error(error)
+      this.setState(state => ({ error, alertVisible: true }))
+    })
+  }
+
+  handleErrorDismiss = e => {
+    e.persist()
+    e.preventDefault()
+
+    this.setState(state => ({
+      alertVisible: false
+    }))
   }
 
   render() {
@@ -69,7 +90,7 @@ export class Login extends Component {
                         className="form-control" 
                         id="usernameInput" 
                         placeholder="Username" 
-                        onChange={this.handleEmailChange}
+                        onChange={this.handleUsernameChange}
                       />
                     </div>
                     
@@ -91,6 +112,19 @@ export class Login extends Component {
               </div>
 
             </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-4 col-md-offset-4">
+            {
+              this.state.alertVisible ? 
+              <Alert bsStyle="danger" onDismiss={this.handleErrorDismiss}>
+                <h4>{this.state.error.error || this.state.error.toString()}</h4>
+              </Alert>
+              :
+              ''
+            }
           </div>
         </div>
       </div>

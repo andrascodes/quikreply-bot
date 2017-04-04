@@ -9,6 +9,7 @@ import { Main } from './Main'
 import { Conversations } from './Conversations'
 import { Messages } from './Messages'
 import { Dashboard } from './Dashboard'
+import { Profile } from './Profile'
 
 import './App.css';
 
@@ -27,6 +28,7 @@ class App extends Component {
               <Sidebar />
               <Main>
                 <Route exact path="/" component={Dashboard}/>
+                <Route exact path="/profile" component={Profile}/>
                 <Route exact path="/conversations" component={Conversations} />
                 <Route path="/conversations/:id" component={Messages}/>
               </Main>

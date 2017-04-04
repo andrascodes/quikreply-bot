@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+
 import { BarChart, XAxis, YAxis, Bar, ResponsiveContainer, Tooltip, Pie, PieChart } from 'recharts'
 
 import { createServiceApi } from '../lib/serviceApi' 
@@ -54,7 +56,7 @@ export class Dashboard extends Component {
       }))
     )
     .catch(error => {
-      console.log(error)
+      console.error(error)
       return this.setState(state => ({ error }))
     })
   }
@@ -74,132 +76,140 @@ export class Dashboard extends Component {
 
   render() {
 
-    if(this.state.error) {
+    if(this.state.error.status === 401) {
+      // Unauthorized
+      localStorage.clear()
+      return (
+        <Redirect to='/login' />
+      )
+    }
+    else if(this.state.error) {
       return (
         <Error />
       )
     }
+    else {
+      return (
+        <div className="container-fluid">
+          <h1>Dashboard</h1>
 
-    return (
-      <div className="container-fluid">
-        <h1>Dashboard</h1>
-
-        <div className="row Dashboard">
-          <div className="UserChart Chart">
-            <h3 className="text-center" >Active Users By Month</h3>
-            <ResponsiveContainer width="80%" minHeight={360} height="80%" style={{ margin: 'auto' }}>
-              <BarChart data={this.state.users.activeUsersByMonth} >
-                <XAxis dataKey="month"/>
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="count" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-lg-4 col-md-4">
-            <TotalUsers 
-              icon={'fa-users'}
-              number={this.state.users.totalUsers}
-              label={`Total Users`}
-            />
-          </div>
-          
-          <div className="col-lg-4 col-md-4">
-            <ActiveToday 
-              icon={'fa-user'}
-              number={this.state.users.activeUsersToday}
-              previous={this.state.users.activeUsersYesterday}
-              label={`Active Users Today`}
-            />
+          <div className="row Dashboard">
+            <div className="UserChart Chart">
+              <h3 className="text-center" >Active Users By Month</h3>
+              <ResponsiveContainer width="80%" minHeight={360} height="80%" style={{ margin: 'auto' }}>
+                <BarChart data={this.state.users.activeUsersByMonth} >
+                  <XAxis dataKey="month"/>
+                  <YAxis />
+                  <Tooltip />
+                  <Bar dataKey="count" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
 
-          <div className="col-lg-4 col-md-4">
-            <ActiveMonthly
-              icon={'fa-user-circle-o'}
-              number={this.state.users.activeUsersLastMonth}
-              previous={this.state.users.activeUsersTwoMonthsAgo}
-              label={`Active Users This Month`}
-            />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="MessageChart Chart col-lg-12 col-md-12">
-            <h3 className="text-center" >Delivered, Read, Undelivered Messages Ratio</h3>
-            <ResponsiveContainer width="80%" minHeight={360} height="80%" style={{ margin: 'auto' }}>
-              <PieChart width={730} height={250}>
-                <Pie 
-                  data={[
-                    {
-                      name: 'Delivered and Read',
-                      value: this.state.messages.deliveredAndReadMessages
-                    },
-                    {
-                      name: 'Delivered, but Not Read',
-                      value: this.state.messages.deliveredNotReadMessages
-                    },
-                    {
-                      name: 'Not Delivered',
-                      value: this.state.messages.notDeliveredMessages
-                    },
-                  ]} 
-                  cx="50%" cy="50%" 
-                  outerRadius={125} fill="#31708f"
-                  labelLine={false} label={this.renderCustomizedLabel}
-                />
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-        <div className="row">
+          <div className="row">
+            <div className="col-lg-4 col-md-4">
+              <TotalUsers 
+                icon={'fa-users'}
+                number={this.state.users.totalUsers}
+                label={`Total Users`}
+              />
+            </div>
             
-          <div className="col-lg-4 col-md-4"></div>
-          
-          <div className="col-lg-4 col-md-4">
-            <div className="TotalErrors">
-              <TotalErrors 
-                icon={'fa-exclamation-triangle'}
-                number={this.state.messages.messageErrors}
-                label={`No. of message errors`}
+            <div className="col-lg-4 col-md-4">
+              <ActiveToday 
+                icon={'fa-user'}
+                number={this.state.users.activeUsersToday}
+                previous={this.state.users.activeUsersYesterday}
+                label={`Active Users Today`}
+              />
+            </div>
+
+            <div className="col-lg-4 col-md-4">
+              <ActiveMonthly
+                icon={'fa-user-circle-o'}
+                number={this.state.users.activeUsersLastMonth}
+                previous={this.state.users.activeUsersTwoMonthsAgo}
+                label={`Active Users This Month`}
               />
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-4"></div>
+          <div className="row">
+            <div className="MessageChart Chart col-lg-12 col-md-12">
+              <h3 className="text-center" >Delivered, Read, Undelivered Messages Ratio</h3>
+              <ResponsiveContainer width="80%" minHeight={360} height="80%" style={{ margin: 'auto' }}>
+                <PieChart width={730} height={250}>
+                  <Pie 
+                    data={[
+                      {
+                        name: 'Delivered and Read',
+                        value: this.state.messages.deliveredAndReadMessages
+                      },
+                      {
+                        name: 'Delivered, but Not Read',
+                        value: this.state.messages.deliveredNotReadMessages
+                      },
+                      {
+                        name: 'Not Delivered',
+                        value: this.state.messages.notDeliveredMessages
+                      },
+                    ]} 
+                    cx="50%" cy="50%" 
+                    outerRadius={125} fill="#31708f"
+                    labelLine={false} label={this.renderCustomizedLabel}
+                  />
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+          <div className="row">
+              
+            <div className="col-lg-4 col-md-4"></div>
+            
+            <div className="col-lg-4 col-md-4">
+              <div className="TotalErrors">
+                <TotalErrors 
+                  icon={'fa-exclamation-triangle'}
+                  number={this.state.messages.messageErrors}
+                  label={`No. of message errors`}
+                />
+              </div>
+            </div>
 
+            <div className="col-lg-4 col-md-4"></div>
+
+          </div>
+
+          <div className="row">
+            <div className="col-lg-4 col-md-4">
+              <TotalMessages 
+                icon={'fa-comments'}
+                number={this.state.messages.totalMessages}
+                label={`Total Messages`}
+              />
+            </div>
+
+            <div className="col-lg-4 col-md-4">
+              <AvgMessages 
+                icon={'fa-comment'}
+                number={Number(this.state.messages.avgMessages).toFixed(2)}
+                label={`Avg. no. messages in a conversation`}
+              />
+            </div>
+
+            <div className="col-lg-4 col-md-4">
+              <AvgLength 
+                icon={'fa-commenting'}
+                number={this.state.messages.avgLength}
+                label={`Avg. length of a conversation`}
+              />
+            </div>
+          </div>
+        
         </div>
-
-        <div className="row">
-          <div className="col-lg-4 col-md-4">
-            <TotalMessages 
-              icon={'fa-comments'}
-              number={this.state.messages.totalMessages}
-              label={`Total Messages`}
-            />
-          </div>
-
-          <div className="col-lg-4 col-md-4">
-            <AvgMessages 
-              icon={'fa-comment'}
-              number={Number(this.state.messages.avgMessages).toFixed(2)}
-              label={`Avg. no. messages in a conversation`}
-            />
-          </div>
-
-          <div className="col-lg-4 col-md-4">
-            <AvgLength 
-              icon={'fa-commenting'}
-              number={this.state.messages.avgLength}
-              label={`Avg. length of a conversation`}
-            />
-          </div>
-        </div>
-       
-      </div>
-    )
+      )
+    }
   }
 }

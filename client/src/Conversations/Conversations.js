@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 import { FilterForm } from './FilterForm'
 import { ConversationTable } from './ConversationTable'
@@ -46,7 +47,7 @@ export class Conversations extends Component {
       }))
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
       return this.setState(state => ({ error }))
     })
   }
@@ -140,8 +141,19 @@ export class Conversations extends Component {
 
   render() {
 
-    if(this.state.error) {
-      return <Error />
+    if(this.state.error.status === 401) {
+      // Unauthorized
+      localStorage.clear()
+      return (
+        <Redirect to='/login' />
+      )
+    }
+    else if(this.state.error) {
+      return (
+        <div className="Conversations">
+          <Error />
+        </div>
+      )
     }
     else if(!this.state.conversations) {
       return <Loading />

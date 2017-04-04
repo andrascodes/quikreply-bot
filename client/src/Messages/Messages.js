@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 import { MessageRow } from './MessageRow'
 import { MessageHeader } from './MessageHeader'
@@ -10,7 +11,6 @@ export class Messages extends Component {
   
   constructor(props) {
     super(props)
-    // console.log(props)
 
     this.state = {
       id: props.match.params.id,
@@ -41,13 +41,20 @@ export class Messages extends Component {
       label: convo.label 
     })))
     .catch(error => {
-      console.log(error)
+      console.error(error)
       return this.setState(state => ({ error }))
     })
   }
 
   render() {
-    if(this.state.error) {
+    if(this.state.error.status === 401) {
+      // Unauthorized
+      localStorage.clear()
+      return (
+        <Redirect to='/login' />
+      )
+    }
+    else if(this.state.error) {
       return (
         <div className="Messages">
           <Error />
