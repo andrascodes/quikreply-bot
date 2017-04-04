@@ -35,7 +35,13 @@ async function main({ port, db, dbOptions, botServer, serverUrl }) {
     await db.sequelize.sync(dbOptions)
 
     // Add admin User to DB
-    await db.User.create({ username: 'admin', password: 'password' })
+    const adminUser = await db.User.findOne({
+      where: { id: 1 }
+    })
+
+    if(!adminUser) {
+      await db.User.create({ username: 'admin', password: 'password' })
+    }
   }
 
   botServer.start(port, `Express app is listening at \n${serverUrl}`)
