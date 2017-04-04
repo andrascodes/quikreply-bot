@@ -38,6 +38,6 @@ gulp.task('copy-css', () => {
 // })
 
 gulp.task('copy-others', () => {
-  return gulp.src('./client/build/*.!(html | json | css.map | js.map)')
+  return gulp.src('./client/build/*.!(html|json|css.map|js.map)')
           .pipe(gulp.dest('./server/views/'))
 })
