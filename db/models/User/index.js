@@ -16,8 +16,16 @@ module.exports = function User(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+    },
+
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
       set: function setEmail(value) {
-        this.setDataValue('username', value.toLowerCase())
+        this.setDataValue('email', value.toLowerCase())
+      },
+      validate: {
+        isEmail: true,
       }
     },
 
@@ -125,8 +133,8 @@ module.exports = function User(sequelize, DataTypes) {
       },
 
       toPublicJSON: function() {
-        const { username, createdAt, updatedAt } = this.toJSON();
-        return { username, createdAt, updatedAt };
+        const { username, email, createdAt, updatedAt } = this.toJSON();
+        return { username, email, createdAt, updatedAt };
       },
 
     }

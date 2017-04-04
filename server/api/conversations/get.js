@@ -5,9 +5,9 @@ const createGetConversationsHandler = db => async (req, res) => {
 
   try {
     const conversations = await ConversationModel.findAll({
-      // where: {
-      //   display: true
-      // },
+      where: {
+        display: true
+      },
       attributes: [ 'id', 'participant', ['startTimestamp', 'start'], ['endTimestamp', 'end'], ['clusterLabel', 'label'] ],
       order: [[ 'startTimestamp', 'DESC' ]]
     })
@@ -24,8 +24,6 @@ const createGetConversationsHandler = db => async (req, res) => {
   catch(error) {
     res.status(500).json({ error: error.toString() })
   }
-
-
 }
 
 module.exports = createGetConversationsHandler;

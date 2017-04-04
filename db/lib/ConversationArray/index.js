@@ -4,7 +4,7 @@ const _ = require('underscore')
 
 const createConversationArray = fetch => nlpApiUrl => {
   // const _thirtyMinutes = 1800000
-  const _thirtyMinutes = 3000
+  const _thirtyMinutes = 12000
   const _conversations = {}
 
   const createGetCluster = (fetch, nlpApiUrl) => async convoText => {

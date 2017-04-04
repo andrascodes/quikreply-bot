@@ -9,7 +9,7 @@ const jwtAuth = db => async (req, res, next) => {
 
   try {
     const tokenString = req.get('Authorization').includes('Bearer') ? req.get('Authorization').substring(7) : ''
-    
+
     const [ token, user ] = await Promise.all([
       TokenModel.findOne({
         where: {

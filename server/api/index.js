@@ -10,6 +10,8 @@ const createGetConversationsHandler = require('./conversations/get')
 const createGetConversationByIdHandler = require('./conversations/id/get')
 const createGetLoginHandler = require('./login/get')
 const createPostLoginHandler = require('./login/post')
+const createPostLogoutHandler = require('./logout/post')
+const createPutProfileHandler = require('./profile/put')
 
 const createAuthenticationHandler = require('./authentication')
 
@@ -34,8 +36,10 @@ module.exports = (db, router) => {
 
   router.get('/login', createGetLoginHandler(db))
   router.post('/login', createPostLoginHandler(db))
+
+  router.post('/logout', authenticate, createPostLogoutHandler(db))
   
-  // router.post('/logout', createPostLogoutHandler(db))
+  router.put('/profile', authenticate, createPutProfileHandler(db))
 
   router.get('/conversations', authenticate, createGetConversationsHandler(db))
 
