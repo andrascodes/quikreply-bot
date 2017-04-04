@@ -22,7 +22,8 @@ module.exports = function User(sequelize, DataTypes) {
       type: DataTypes.STRING,
       unique: true,
       set: function setEmail(value) {
-        this.setDataValue('email', value.toLowerCase())
+        const email = value ? value.toLowerCase() : null
+        this.setDataValue('email', email)
       },
       validate: {
         isEmail: true,
