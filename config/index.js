@@ -27,8 +27,7 @@ else {
 }
 
 // Set if the DB should be Resynced on start
-// const resyncDb = process.env.FORCE_DB
-const resyncDb = 'TRUE'
+const resyncDb = process.env.FORCE_DB
 if (resyncDb && resyncDb.toUpperCase() === 'TRUE') {
   console.log('DB set to resync.')
   config.dbOptions = { force: true }

@@ -1,7 +1,5 @@
 'use strict'
 
-const cors = require('cors')
-
 const bodyParser = require('body-parser')
 const createGetConversationsTextHandler = require('./conversations/text/get')
 const createPutConversationsTextHandler = require('./conversations/text/put')
@@ -20,7 +18,7 @@ module.exports = (db, router) => {
   const authenticate = createAuthenticationHandler(db)
 
   if(!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-    router.use(cors({
+    router.use(require('cors')({
       exposedHeaders: ['Auth', 'Cache-Control', 'Content-Type'],
     }))
   }
