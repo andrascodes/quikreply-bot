@@ -42,7 +42,13 @@ else {
 if (!(config.pageId &&
       config.accessToken &&
       config.verifyToken &&
-      config.appSecret)) {
+      config.appSecret &&
+      config.jwtPassword &&
+      config.cryptoPassword &&
+      config.databaseUrl &&
+      config.serverUrl &&
+      config.nlpApiUrl &&
+      config.dbOptions)) {
   throw new Error('Missing config values.');
 }
 
