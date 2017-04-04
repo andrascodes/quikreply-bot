@@ -2,7 +2,7 @@
 
 // UserSchema
 
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const cryptojs = require('crypto-js')
 const jwt = require('jsonwebtoken')
 
