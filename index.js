@@ -32,6 +32,13 @@ async function main({ port, db, dbOptions, botServer, serverUrl }) {
   
   if(db) {
     // Sync DB
+    const resyncDb = process.env.FORCE_DB
+    if (dbOptions) {
+      console.log('DB set to resync.')
+    }
+    else {
+      console.log('DB is not being resynced.')
+    }
     await db.sequelize.sync(dbOptions)
 
     // Add admin User to DB

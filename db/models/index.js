@@ -1,7 +1,7 @@
 'use strict'
 
 // DB model definition
-module.exports = ({ sequelize, conversationArray }) => {
+module.exports = sequelize => {
   const db = {}
 
   db.Message = sequelize.import(`${__dirname}/Message/index.js`)
@@ -13,8 +13,6 @@ module.exports = ({ sequelize, conversationArray }) => {
 
   db.Message.belongsTo(db.Conversation)
   db.Conversation.hasMany(db.Message)
-
-  db.activeConversations = conversationArray
 
   return db
 

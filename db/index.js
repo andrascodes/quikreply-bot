@@ -1,17 +1,12 @@
 'use strict'
 
-// Setup DB connection
 const Sequelize = require('sequelize')
-const fetch = require('node-fetch')
-const ConversationArray = require('./lib/ConversationArray')(fetch)
-const createDB = require('./models')
+const createModels = require('./models')
 
-module.exports = (databaseUrl, nlpApiUrl) => {
-  if(databaseUrl) {
-    return createDB({
-      sequelize: new Sequelize(databaseUrl),
-      conversationArray: ConversationArray(nlpApiUrl)
-    })
+// Setup DB connection
+module.exports = dbUrl => {
+  if(dbUrl) {
+    return createModels(new Sequelize(dbUrl))
   }
   else {
     return undefined

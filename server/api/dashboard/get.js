@@ -9,9 +9,9 @@ const createGetConversationsHandler = db => async (req, res) => {
   const sequelize = db.sequelize
 
   try {
-    const getDateAMonthAgo = () => moment().subtract(1, 'months').format('YYYY-MM-DD')
+    const getDateAMonthAgo = () => moment().utc().subtract(1, 'months').format('YYYY-MM-DD')
 
-    const getDateTwoMonthsAgo = () => moment().subtract(2, 'months').format('YYYY-MM-DD')
+    const getDateTwoMonthsAgo = () => moment().utc().subtract(2, 'months').format('YYYY-MM-DD')
 
     const dashboardQueries = await Promise.all([
       // totalUsers
@@ -20,7 +20,7 @@ const createGetConversationsHandler = db => async (req, res) => {
       sequelize.query( 
         `SELECT COUNT(DISTINCT participant) AS data FROM conversations WHERE DATE("startTimestamp") = ?`,
         { 
-          replacements: [moment().format('YYYY-MM-DD')], 
+          replacements: [moment().utc().format('YYYY-MM-DD')], 
           type: sequelize.QueryTypes.SELECT
         } 
       ),
@@ -28,7 +28,7 @@ const createGetConversationsHandler = db => async (req, res) => {
       sequelize.query( 
         `SELECT COUNT(DISTINCT participant) AS data FROM conversations WHERE DATE("startTimestamp") = ?`,
         { 
-          replacements: [moment().subtract(1, 'days').format('YYYY-MM-DD')], 
+          replacements: [moment().utc().subtract(1, 'days').format('YYYY-MM-DD')], 
           type: sequelize.QueryTypes.SELECT
         } 
       ),
@@ -37,8 +37,8 @@ const createGetConversationsHandler = db => async (req, res) => {
         `SELECT COUNT(DISTINCT participant) AS data  FROM conversations WHERE "startTimestamp" BETWEEN :monthAgo AND :now`,
         { 
           replacements: {
-            monthAgo: moment().subtract(1, 'months').format('YYYY-MM-DD'),
-            now: moment().add(1, 'days').format('YYYY-MM-DD')
+            monthAgo: moment().utc().subtract(1, 'months').format('YYYY-MM-DD'),
+            now: moment().utc().add(1, 'days').format('YYYY-MM-DD')
           }, 
           type: sequelize.QueryTypes.SELECT
         } 
@@ -48,8 +48,8 @@ const createGetConversationsHandler = db => async (req, res) => {
         `SELECT COUNT(DISTINCT participant) AS data  FROM conversations WHERE "startTimestamp" BETWEEN :twoMonthsAgo AND :monthAgo`,
         { 
           replacements: {
-            twoMonthsAgo: moment().subtract(2, 'months').format('YYYY-MM-DD'),
-            monthAgo: moment().add(1, 'days').subtract(1, 'months').format('YYYY-MM-DD')
+            twoMonthsAgo: moment().utc().subtract(2, 'months').format('YYYY-MM-DD'),
+            monthAgo: moment().utc().add(1, 'days').subtract(1, 'months').format('YYYY-MM-DD')
           }, 
           type: sequelize.QueryTypes.SELECT
         } 

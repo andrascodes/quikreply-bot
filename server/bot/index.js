@@ -2,7 +2,7 @@
 
 const BootBot = require('./bootbot/BootBot')
 const modules = require('./modules')
-const Analytics = require('./analytics')
+const Analytics = require('../../lib/Analytics')
 
 module.exports = (app, db, { pageId, accessToken, verifyToken, appSecret }, nlpApiUrl) => {
 

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "./node_modules/.bin/nf start -j Procfiledev",
+    "dev": "NODE_ENV=development ./node_modules/.bin/nodemon index.js",
     "devlt": "./node_modules/.bin/nf start -j Procfiledevlt",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test ./node_modules/.bin/nodemon -x \"node_modules/.bin/tape '!(node_modules|client)/**/*.test.js' | ./node_modules/.bin/faucet\"",
     "build-client": "cd client; yarn build; cd $OLDPWD; ./node_modules/.bin/gulp copy;"
   },
   "repository": {
@@ -25,9 +25,14 @@
   },
   "devDependencies": {
     "cors": "^2.8.3",
+    "dotenv": "^4.0.0",
+    "faucet": "^0.0.1",
     "foreman": "^2.0.0",
     "localtunnel": "^1.8.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "tap": "^10.3.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
   },
   "dependencies": {
     "basic-auth": "^1.1.0",
