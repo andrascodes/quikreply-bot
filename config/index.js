@@ -48,11 +48,7 @@ if ( (env  === 'production' || env === 'development') &&
     !(config.pageId &&
       config.accessToken &&
       config.verifyToken &&
-      config.appSecret &&
-      config.jwtPassword &&
-      config.cryptoPassword &&
-      config.serverUrl &&
-      config.dbOptions)) {
+      config.appSecret )) {
   throw new Error('Missing config values.');
 }
 

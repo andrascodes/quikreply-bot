@@ -20,10 +20,11 @@ class BootBot extends EventEmitter {
 
     // Changed
     // Analytics module or stubbed with an object with the same interface
-    this.analytics = options.analytics || ({
-      logIncoming: (event) => true,
-      logOutgoing: (body, res) => true
-    });
+    this.analytics = options.analytics
+    // this.analytics = options.analytics || ({
+    //   logIncoming: (event) => true,
+    //   logOutgoing: (body, res) => true
+    // });
     
     this.broadcastEchoes = options.broadcastEchoes || false;
     
@@ -163,7 +164,11 @@ class BootBot extends EventEmitter {
       body: JSON.stringify(body)
     })
     .then(res => res.json())
-    .then(resJSON => this.analytics.logOutgoing(body, resJSON))
+    .then(resJSON => {
+      if(this.analytics) {
+        this.analytics.logOutgoing(body, resJSON)
+      }
+    })
     .catch(err => console.log(`Error sending message: ${err}`));
   }
 
@@ -406,7 +411,10 @@ class BootBot extends EventEmitter {
           entry.messaging.forEach((event) => {
             
             // Connection Point
-            this.analytics.logIncoming(event);
+            // this.analytics.logIncoming(event);
+            if(this.analytics) {
+              this.analytics.logIncoming(event);
+            }
             
             if (event.message && event.message.is_echo && !this.broadcastEchoes) {
               return;
