@@ -13,9 +13,9 @@ module.exports = function Token(sequelize, DataTypes) {
           len: [1]
       },
       set: function tokenSetter(value) {
-          const hash = cryptojs.MD5(value).toString();
-          this.setDataValue('token', value);
-          this.setDataValue('tokenHash', hash);
+            const hash = cryptojs.MD5(value).toString();
+            this.setDataValue('token', value);
+            this.setDataValue('tokenHash', hash);
       }
     },
 

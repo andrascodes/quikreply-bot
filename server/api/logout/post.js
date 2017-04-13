@@ -1,12 +1,19 @@
 'use strict';
 
-const postLogoutHandler = db => async(req, res) => {
+const postLogoutHandler = authService => async(req, res) => {
 
-  const TokenModel = db.TokenModel
-
-  req.token.destroy()
-  .then(() => res.status(204).send())
-  .catch(() => res.status(500).send())
+  try {
+    const { tokenFound, tokenDestroyed } = await authService.logout(req.tokenString)
+    if(tokenFound && tokenDestroyed) {
+      return res.status(204).send()
+    }
+    else {
+      res.status(400).send()
+    }
+  }
+  catch(error) {
+    return res.status(500).send()
+  }
 }
 
 module.exports = postLogoutHandler;

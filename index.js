@@ -1,39 +1,43 @@
 'use strict'
 
-const config = require('./config')
-const serverFactory = require('./server')
-const dbFactory = require('./db')
+const fetch = require('node-fetch')
 
-const fbConfig = {
-  pageId: config.pageId,
-  accessToken: config.accessToken,
-  verifyToken: config.verifyToken,
-  appSecret: config.appSecret,
-}
+const { databaseUrl, nlpApiUrl, serverUrl, fbConfig, dbOptions, resyncDb } = require('./config')
+const db = require('./db')(databaseUrl)
+const nlpApiService = require('./lib/services/NlpApiService')(fetch, nlpApiUrl)
+const messageService = require('./lib/services/MessageService')(db, nlpApiService)
+const authService = require('./lib/services/AuthService')(db)
+const dashboardService = require('./lib/services/DashboardService')(db)
+const conversationService = require('./lib/services/ConversationService')(db, nlpApiService)
+const analytics = require('./lib/Analytics')(conversationService, messageService)
 
-// Setup DB connection
-const db = dbFactory(config.databaseUrl, config.nlpApiUrl)
+const createServer = require('./server')
 
-const botServer = serverFactory(db, fbConfig, {
-  nlpApiUrl: config.nlpApiUrl,
-  serverUrl: config.serverUrl
+const botServer = createServer({ 
+  services: {
+    authService, 
+    conversationService, 
+    dashboardService, 
+  },
+  analytics, 
+  fbConfig, 
+  serverUrl 
 })
 
 // process.env.PORT lets the port to be set by Heroku
 main({ 
   port: process.env.PORT,
   db,
-  dbOptions: config.dbOptions,
+  dbOptions,
   botServer,
-  serverUrl: config.serverUrl
+  serverUrl,
 })
 
 async function main({ port, db, dbOptions, botServer, serverUrl }) {
   
   if(db) {
     // Sync DB
-    const resyncDb = process.env.FORCE_DB
-    if (dbOptions) {
+    if (resyncDb) {
       console.log('DB set to resync.')
     }
     else {

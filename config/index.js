@@ -5,18 +5,18 @@ if(!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 }
 
 const config = {
-  pageId: process.env.FB_PAGE_ID,
-  accessToken: process.env.FB_PAGE_TOKEN,
-  verifyToken: process.env.FB_VERIFY_TOKEN,
-  appSecret: process.env.FB_APP_SECRET,
-
+  fbConfig: {
+    pageId: process.env.FB_PAGE_ID,
+    accessToken: process.env.FB_PAGE_TOKEN,
+    verifyToken: process.env.FB_VERIFY_TOKEN,
+    appSecret: process.env.FB_APP_SECRET,
+  },
   // Secret key for JWT signing and encryption
   jwtPassword: process.env.JWTPASSWORD || 'qwerty098',
   cryptoPassword: process.env.CRYPTOPASSWORD || 'abc123!@#!'
 }
 
 const env = process.env.NODE_ENV || 'development'
-
 // Set Database connection URL
 if (env === 'production') {
   config.databaseUrl = process.env.DATABASE_URL
@@ -35,20 +35,22 @@ else {
 }
 
 // Set if the DB should be Resynced on start
-const resyncDb = process.env.FORCE_DB
-if (resyncDb && resyncDb.toUpperCase() === 'TRUE') {
+let resyncDb = process.env.FORCE_DB
+resyncDb = (resyncDb === 'true' || resyncDb === 'TRUE')
+if (resyncDb) {
   config.dbOptions = { force: true }
 }
 else {
   config.dbOptions = {}
 }
+config.resyncDb = resyncDb
 
 // Exit if either of the config values are missing.
 if ( (env  === 'production' || env === 'development') &&
-    !(config.pageId &&
-      config.accessToken &&
-      config.verifyToken &&
-      config.appSecret )) {
+    !(config.fbConfig.pageId &&
+      config.fbConfig.accessToken &&
+      config.fbConfig.verifyToken &&
+      config.fbConfig.appSecret )) {
   throw new Error('Missing config values.');
 }
 

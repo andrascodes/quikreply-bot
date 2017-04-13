@@ -1,29 +1,18 @@
 'use strict';
 
-const cryptojs = require('crypto-js')
-
 // Login API endpoint, returning User, get the User instance from DB, return JWT
-const jwtAuth = db => async (req, res, next) => {
-  const UserModel = db.User
-  const TokenModel = db.Token
-
+const jwtAuth = authService => async (req, res, next) => {
+ 
   try {
     const tokenString = req.get('Authorization').includes('Bearer') ? req.get('Authorization').substring(7) : ''
+    
+    const { tokenFound, user } = await authService.authenticate(tokenString)
 
-    const [ token, user ] = await Promise.all([
-      TokenModel.findOne({
-        where: {
-          tokenHash: cryptojs.MD5(tokenString).toString()
-        }
-      }),
-      UserModel.findByToken(tokenString)
-    ])
-
-    if(!token || !user) {
-      throw new Error()
+    if(!tokenFound || !user) {
+      throw new Error('Unauthorized')
     }
 
-    req.token = token
+    req.tokenString = tokenString
     req.user = user
     next()
   }

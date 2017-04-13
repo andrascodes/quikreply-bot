@@ -2,25 +2,26 @@
 
 const auth = require('basic-auth')
 
-const putProfileHandler = db => async(req, res) => {
-  const user = req.user
-
-  const { name: username, pass: password } = auth.parse(req.get('Auth-Basic'))
-  const { email } = req.body
-
-  let newUserValues = {}
-  if(username) {
-    newUserValues.username = username
-  }
-  if(password) {
-    newUserValues.password = password
-  }
-  newUserValues.email = (email && email !== '') ? email : null
+const putProfileHandler = authService => async(req, res) => {
 
   try {
-    const updatedUser = await user.update(newUserValues)
-    return res.status(200).json(updatedUser.toPublicJSON())
 
+    const user = req.user
+    const { name: username, pass: password } = auth.parse(req.get('Auth-Basic'))
+    const { email } = req.body
+
+    let newUserValues = {}
+    if(username) {
+      newUserValues.username = username
+    }
+    if(password) {
+      newUserValues.password = password
+    }
+    newUserValues.email = (email && email !== '') ? email : null
+
+    const updatedUser = await authService.updateUser(user.id, newUserValues)
+    
+    return res.status(200).json(updatedUser)
   }
   catch(error) {
     console.error(error.message)

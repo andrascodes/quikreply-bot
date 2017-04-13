@@ -13,41 +13,41 @@ const createPutProfileHandler = require('./profile/put')
 
 const createAuthenticationHandler = require('./authentication')
 
-module.exports = (db, router) => {
+module.exports = ({ services, apiRouter }) => {
 
-  const authenticate = createAuthenticationHandler(db)
+  const { authService, conversationService, dashboardService } = services
+  const authenticate = createAuthenticationHandler(authService)
 
   if(!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-    router.use(require('cors')({
+    apiRouter.use(require('cors')({
       exposedHeaders: ['Auth', 'Cache-Control', 'Content-Type'],
     }))
   }
 
-  router.use(bodyParser.urlencoded({ extended: false }))
-  router.use(bodyParser.json())
+  apiRouter.use(bodyParser.urlencoded({ extended: false }))
+  apiRouter.use(bodyParser.json())
 
-  router.get('/healthcheck', (req, res) => {
+  apiRouter.get('/healthcheck', (req, res) => {
     res.status(200).json({
       result: 'success'
     })
   })
 
-  router.get('/login', createGetLoginHandler(db))
-  router.post('/login', createPostLoginHandler(db))
+  apiRouter.get('/login', createGetLoginHandler(authService))
+  apiRouter.post('/login', createPostLoginHandler(authService))
 
-  router.post('/logout', authenticate, createPostLogoutHandler(db))
+  apiRouter.post('/logout', authenticate, createPostLogoutHandler(authService))
   
-  router.put('/profile', authenticate, createPutProfileHandler(db))
+  apiRouter.put('/profile', authenticate, createPutProfileHandler(authService))
 
-  router.get('/conversations', authenticate, createGetConversationsHandler(db))
+  apiRouter.get('/conversations', authenticate, createGetConversationsHandler(conversationService))
 
-  router.get('/conversations/text', authenticate, createGetConversationsTextHandler(db))
-  router.put('/conversations/text', authenticate, createPutConversationsTextHandler(db))
+  apiRouter.get('/conversations/text', authenticate, createGetConversationsTextHandler(conversationService))
+  apiRouter.put('/conversations/text', authenticate, createPutConversationsTextHandler(conversationService))
   
-  router.get('/conversations/:id', authenticate, createGetConversationByIdHandler(db))
-  // router.put('/conversations/:id', createPutConversationByIdHandler(db))
+  apiRouter.get('/conversations/:id', authenticate, createGetConversationByIdHandler(conversationService))
 
-  router.get('/dashboard', authenticate, createGetDashboardHandler(db))
+  apiRouter.get('/dashboard', authenticate, createGetDashboardHandler(dashboardService))
 
-  return router
+  return apiRouter
 }

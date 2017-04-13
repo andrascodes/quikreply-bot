@@ -1,21 +1,9 @@
 'use strict';
 
-const createGetConversationByIdHandler = db => async (req, res) => {
-  const ConversationModel = db.Conversation
-  const MessageModel = db.Message
+const createGetConversationByIdHandler = conversationService => async (req, res) => {
 
   try {
-    const conversationMessages = await ConversationModel.findOne({
-      where: {
-        id: req.params.id,
-      },
-      attributes: [ 'id', 'participant', ['startTimestamp', 'start'], ['endTimestamp', 'end'], ['clusterLabel', 'label'] ],
-      include: [{ 
-        model: MessageModel,
-        attributes: ['id', 'type', 'direction', 'timestamp', 'text', 'error', 'sentiment', 'message', 'response']
-      }],
-      order: [ [MessageModel, 'timestamp', 'ASC'] ]
-    })
+    const conversationMessages = await conversationService.fetchByIdWithMessages(req.params.id)
 
     return res.status(200).json({ data: conversationMessages })
   }

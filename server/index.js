@@ -1,15 +1,17 @@
 'use strict'
 
-const apiFactory = require('./api')
-const botFactory = require('./bot')
+const createApiRouter = require('./api')
+const createBot = require('./bot')
 const express = require('express')
 const path = require('path')
 const url = require('url')
 
-module.exports = (db, fbConfig, { nlpApiUrl, serverUrl }) => {
+module.exports = ({ services, serverUrl, analytics, fbConfig }) => {
+  
   const app = express()
-  const apiRouter = apiFactory(db, express.Router())
-  app.use('/api', apiRouter)
+  const apiRouter = express.Router()
+  const handleApiRequests = createApiRouter({ services, apiRouter })
+  app.use('/api', handleApiRequests)
   
   app.set('view engine', 'ejs')
   app.set('views', path.join(__dirname, '/views'))
@@ -26,7 +28,7 @@ module.exports = (db, fbConfig, { nlpApiUrl, serverUrl }) => {
     })
   })
 
-  const bot = botFactory(app, db, fbConfig, nlpApiUrl)
+  const bot = createBot(app, analytics, fbConfig)
 
   return bot
 }
