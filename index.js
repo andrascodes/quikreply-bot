@@ -2,14 +2,14 @@
 
 const fetch = require('node-fetch')
 
-const { databaseUrl, nlpApiUrl, serverUrl, fbConfig, dbOptions, resyncDb } = require('./config')
+const { databaseUrl, nlpApiUrl, serverUrl, fbConfig, dbOptions, resyncDb, conversationTimeout } = require('./config')
 const db = require('./db')(databaseUrl)
 const nlpApiService = require('./lib/services/NlpApiService')(fetch, nlpApiUrl)
 const messageService = require('./lib/services/MessageService')(db, nlpApiService)
 const authService = require('./lib/services/AuthService')(db)
 const dashboardService = require('./lib/services/DashboardService')(db)
 const conversationService = require('./lib/services/ConversationService')(db, nlpApiService)
-const analytics = require('./lib/Analytics')(conversationService, messageService)
+const analytics = require('./lib/Analytics')(conversationService, messageService, conversationTimeout)
 
 const createServer = require('./server')
 

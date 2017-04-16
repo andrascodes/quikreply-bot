@@ -11,6 +11,7 @@ const config = {
     verifyToken: process.env.FB_VERIFY_TOKEN,
     appSecret: process.env.FB_APP_SECRET,
   },
+  conversationTimeout: process.env.CONV_TIMEOUT,
   // Secret key for JWT signing and encryption
   jwtPassword: process.env.JWTPASSWORD || 'qwerty098',
   cryptoPassword: process.env.CRYPTOPASSWORD || 'abc123!@#!'
