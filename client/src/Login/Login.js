@@ -119,7 +119,7 @@ export class Login extends Component {
           <div className="col-md-4 col-md-offset-4">
             {
               this.state.alertVisible ? 
-              <Alert bsStyle="danger" onDismiss={this.handleErrorDismiss}>
+              <Alert bsStyle="danger" onDismiss={this.handleErrorDismiss} id={'errorClose'}>
                 <h4>{this.state.error.error || this.state.error.toString()}</h4>
               </Alert>
               :

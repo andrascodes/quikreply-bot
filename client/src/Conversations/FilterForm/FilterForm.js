@@ -61,6 +61,8 @@ FilterForm.PropTypes = {
 
   minStartDate: React.PropTypes.string,
   maxEndDate: React.PropTypes.string,
+  defaultStartValue: React.PropTypes.string,
+  defaultEndValue: React.PropTypes.string,
   handleStartInput: React.PropTypes.func.isRequired,
   handleEndInput: React.PropTypes.func.isRequired,
 

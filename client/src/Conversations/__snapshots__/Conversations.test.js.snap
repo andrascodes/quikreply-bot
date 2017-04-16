@@ -1,0 +1,1876 @@
+exports[`Conversations renders Error when state.error is truthy 1`] = `
+<Conversations>
+  <div
+    className="Conversations">
+    <Component>
+      <div
+        className="container-fluid">
+        <h2>
+          Error. 
+          Try again later!
+        </h2>
+      </div>
+    </Component>
+  </div>
+</Conversations>
+`;
+
+exports[`Conversations renders Loading when state.conversations is undefined 1`] = `
+<Conversations>
+  <Component>
+    <div
+      className="container-fluid">
+      <h2>
+        Loading...
+      </h2>
+    </div>
+  </Component>
+</Conversations>
+`;
+
+exports[`Conversations renders conversations when state.conversations is not empty 1`] = `
+<Conversations>
+  <div
+    className="Conversations">
+    <div
+      className="container-fluid">
+      <h1>
+        Conversations
+      </h1>
+      <Component
+        defaultEndValue=""
+        defaultErrorValue=""
+        defaultLabelValue=""
+        defaultParticipantValue=""
+        defaultStartValue=""
+        errorOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "OAuthException",
+              "value": "OAuthException",
+            },
+            Object {
+              "text": "null",
+              "value": null,
+            },
+          ]
+        }
+        handleEndInput={[Function]}
+        handleErrorChange={[Function]}
+        handleLabelChange={[Function]}
+        handleParticipantInput={[Function]}
+        handleStartInput={[Function]}
+        labelOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "dislike consumers question worst get human",
+              "value": "dislike consumers question worst get human",
+            },
+            Object {
+              "text": "like creators feedback best send bot",
+              "value": "like creators feedback best send bot",
+            },
+          ]
+        }
+        maxEndDate="2017-04-12"
+        minStartDate="2017-04-09"
+        participantList={
+          Array [
+            "123",
+            "456",
+          ]
+        }>
+        <div
+          className="FilterForm">
+          <div
+            className="container-fluid">
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultParticipantValue=""
+                  handleInput={[Function]}
+                  options={
+                    Array [
+                      "123",
+                      "456",
+                    ]
+                  }>
+                  <div
+                    className="form-group SearchField">
+                    <label
+                      className="SearchLabel"
+                      htmlFor="participants">
+                      Participant:
+                    </label>
+                    <input
+                      className="SearchInput"
+                      defaultValue=""
+                      list="participants"
+                      onInput={[Function]} />
+                    <datalist
+                      id="participants">
+                      <option
+                        value="123" />
+                      <option
+                        value="456" />
+                    </datalist>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultEndValue=""
+                  defaultStartValue=""
+                  handleEndInput={[Function]}
+                  handleStartInput={[Function]}
+                  maxEndDate="2017-04-12"
+                  minStartDate="2017-04-09">
+                  <div
+                    className="DateRangePicker">
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="from">
+                      Date between:
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-09"
+                      id="from"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="to">
+                      and
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-12"
+                      id="to"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                  </div>
+                </Component>
+              </div>
+            </div>
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Label:"
+                  name="clusterLabelSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "dislike consumers question worst get human",
+                        "value": "dislike consumers question worst get human",
+                      },
+                      Object {
+                        "text": "like creators feedback best send bot",
+                        "value": "like creators feedback best send bot",
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="clusterLabelSelector">
+                      Label:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="clusterLabelSelector"
+                      name="clusterLabelSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="dislike consumers question worst get human">
+                        dislike consumers question worst get human
+                      </option>
+                      <option
+                        value="like creators feedback best send bot">
+                        like creators feedback best send bot
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Error:"
+                  name="errorSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "OAuthException",
+                        "value": "OAuthException",
+                      },
+                      Object {
+                        "text": "null",
+                        "value": null,
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="errorSelector">
+                      Error:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="errorSelector"
+                      name="errorSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="OAuthException">
+                        OAuthException
+                      </option>
+                      <option
+                        value={null}>
+                        null
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Component>
+      <Component
+        conversations={
+          Array [
+            Object {
+              "end": "2017-04-12T16:43:21.408Z",
+              "errors": null,
+              "id": 6,
+              "label": "like creators feedback best send bot",
+              "participant": "123",
+              "start": "2017-04-12T16:43:18.589Z",
+            },
+            Object {
+              "end": "2017-04-09T16:41:14.390Z",
+              "errors": "OAuthException",
+              "id": 5,
+              "label": "dislike consumers question worst get human",
+              "participant": "456",
+              "start": "2017-04-09T16:41:04.681Z",
+            },
+          ]
+        }
+        handleRowClick={[Function]}>
+        <table
+          className="table table-hover">
+          <thead>
+            <tr>
+              <th>
+                participant
+              </th>
+              <th>
+                date
+              </th>
+              <th>
+                duration
+              </th>
+              <th>
+                label
+              </th>
+              <th>
+                errors
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Component
+              end="2017-04-12T16:43:21.408Z"
+              errors={null}
+              handleRowClick={[Function]}
+              id={6}
+              label="like creators feedback best send bot"
+              participant="123"
+              start="2017-04-12T16:43:18.589Z">
+              <tr
+                id={6}
+                onClick={[Function]}>
+                <td>
+                  123
+                </td>
+                <td>
+                  April 12th 2017 18:43
+                </td>
+                <td>
+                  00:02
+                </td>
+                <td>
+                  like creators feedback best send bot
+                </td>
+                <td />
+              </tr>
+            </Component>
+            <Component
+              end="2017-04-09T16:41:14.390Z"
+              errors="OAuthException"
+              handleRowClick={[Function]}
+              id={5}
+              label="dislike consumers question worst get human"
+              participant="456"
+              start="2017-04-09T16:41:04.681Z">
+              <tr
+                id={5}
+                onClick={[Function]}>
+                <td>
+                  456
+                </td>
+                <td>
+                  April 9th 2017 18:41
+                </td>
+                <td>
+                  00:09
+                </td>
+                <td>
+                  dislike consumers question worst get human
+                </td>
+                <td>
+                  OAuthException
+                </td>
+              </tr>
+            </Component>
+          </tbody>
+        </table>
+      </Component>
+    </div>
+  </div>
+</Conversations>
+`;
+
+exports[`Conversations renders filtered conversations when state.errorLabel is set 1`] = `
+<Conversations>
+  <div
+    className="Conversations">
+    <div
+      className="container-fluid">
+      <h1>
+        Conversations
+      </h1>
+      <Component
+        defaultEndValue=""
+        defaultErrorValue="OAuthException"
+        defaultLabelValue=""
+        defaultParticipantValue=""
+        defaultStartValue=""
+        errorOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "OAuthException",
+              "value": "OAuthException",
+            },
+            Object {
+              "text": "null",
+              "value": null,
+            },
+          ]
+        }
+        handleEndInput={[Function]}
+        handleErrorChange={[Function]}
+        handleLabelChange={[Function]}
+        handleParticipantInput={[Function]}
+        handleStartInput={[Function]}
+        labelOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "dislike consumers question worst get human",
+              "value": "dislike consumers question worst get human",
+            },
+            Object {
+              "text": "like creators feedback best send bot",
+              "value": "like creators feedback best send bot",
+            },
+          ]
+        }
+        maxEndDate="2017-04-12"
+        minStartDate="2017-04-09"
+        participantList={
+          Array [
+            "123",
+            "456",
+          ]
+        }>
+        <div
+          className="FilterForm">
+          <div
+            className="container-fluid">
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultParticipantValue=""
+                  handleInput={[Function]}
+                  options={
+                    Array [
+                      "123",
+                      "456",
+                    ]
+                  }>
+                  <div
+                    className="form-group SearchField">
+                    <label
+                      className="SearchLabel"
+                      htmlFor="participants">
+                      Participant:
+                    </label>
+                    <input
+                      className="SearchInput"
+                      defaultValue=""
+                      list="participants"
+                      onInput={[Function]} />
+                    <datalist
+                      id="participants">
+                      <option
+                        value="123" />
+                      <option
+                        value="456" />
+                    </datalist>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultEndValue=""
+                  defaultStartValue=""
+                  handleEndInput={[Function]}
+                  handleStartInput={[Function]}
+                  maxEndDate="2017-04-12"
+                  minStartDate="2017-04-09">
+                  <div
+                    className="DateRangePicker">
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="from">
+                      Date between:
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-09"
+                      id="from"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="to">
+                      and
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-12"
+                      id="to"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                  </div>
+                </Component>
+              </div>
+            </div>
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Label:"
+                  name="clusterLabelSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "dislike consumers question worst get human",
+                        "value": "dislike consumers question worst get human",
+                      },
+                      Object {
+                        "text": "like creators feedback best send bot",
+                        "value": "like creators feedback best send bot",
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="clusterLabelSelector">
+                      Label:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="clusterLabelSelector"
+                      name="clusterLabelSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="dislike consumers question worst get human">
+                        dislike consumers question worst get human
+                      </option>
+                      <option
+                        value="like creators feedback best send bot">
+                        like creators feedback best send bot
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue="OAuthException"
+                  handleChange={[Function]}
+                  label="Error:"
+                  name="errorSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "OAuthException",
+                        "value": "OAuthException",
+                      },
+                      Object {
+                        "text": "null",
+                        "value": null,
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="errorSelector">
+                      Error:
+                    </label>
+                    <select
+                      defaultValue="OAuthException"
+                      id="errorSelector"
+                      name="errorSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="OAuthException">
+                        OAuthException
+                      </option>
+                      <option
+                        value={null}>
+                        null
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Component>
+      <Component
+        conversations={
+          Array [
+            Object {
+              "end": "2017-04-09T16:41:14.390Z",
+              "errors": "OAuthException",
+              "id": 5,
+              "label": "dislike consumers question worst get human",
+              "participant": "456",
+              "start": "2017-04-09T16:41:04.681Z",
+            },
+          ]
+        }
+        handleRowClick={[Function]}>
+        <table
+          className="table table-hover">
+          <thead>
+            <tr>
+              <th>
+                participant
+              </th>
+              <th>
+                date
+              </th>
+              <th>
+                duration
+              </th>
+              <th>
+                label
+              </th>
+              <th>
+                errors
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Component
+              end="2017-04-09T16:41:14.390Z"
+              errors="OAuthException"
+              handleRowClick={[Function]}
+              id={5}
+              label="dislike consumers question worst get human"
+              participant="456"
+              start="2017-04-09T16:41:04.681Z">
+              <tr
+                id={5}
+                onClick={[Function]}>
+                <td>
+                  456
+                </td>
+                <td>
+                  April 9th 2017 18:41
+                </td>
+                <td>
+                  00:09
+                </td>
+                <td>
+                  dislike consumers question worst get human
+                </td>
+                <td>
+                  OAuthException
+                </td>
+              </tr>
+            </Component>
+          </tbody>
+        </table>
+      </Component>
+    </div>
+  </div>
+</Conversations>
+`;
+
+exports[`Conversations renders filtered conversations when state.label is set 1`] = `
+<Conversations>
+  <div
+    className="Conversations">
+    <div
+      className="container-fluid">
+      <h1>
+        Conversations
+      </h1>
+      <Component
+        defaultEndValue=""
+        defaultErrorValue=""
+        defaultLabelValue="dislike consumers question worst get human"
+        defaultParticipantValue=""
+        defaultStartValue=""
+        errorOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "OAuthException",
+              "value": "OAuthException",
+            },
+            Object {
+              "text": "null",
+              "value": null,
+            },
+          ]
+        }
+        handleEndInput={[Function]}
+        handleErrorChange={[Function]}
+        handleLabelChange={[Function]}
+        handleParticipantInput={[Function]}
+        handleStartInput={[Function]}
+        labelOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "dislike consumers question worst get human",
+              "value": "dislike consumers question worst get human",
+            },
+            Object {
+              "text": "like creators feedback best send bot",
+              "value": "like creators feedback best send bot",
+            },
+          ]
+        }
+        maxEndDate="2017-04-12"
+        minStartDate="2017-04-09"
+        participantList={
+          Array [
+            "123",
+            "456",
+          ]
+        }>
+        <div
+          className="FilterForm">
+          <div
+            className="container-fluid">
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultParticipantValue=""
+                  handleInput={[Function]}
+                  options={
+                    Array [
+                      "123",
+                      "456",
+                    ]
+                  }>
+                  <div
+                    className="form-group SearchField">
+                    <label
+                      className="SearchLabel"
+                      htmlFor="participants">
+                      Participant:
+                    </label>
+                    <input
+                      className="SearchInput"
+                      defaultValue=""
+                      list="participants"
+                      onInput={[Function]} />
+                    <datalist
+                      id="participants">
+                      <option
+                        value="123" />
+                      <option
+                        value="456" />
+                    </datalist>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultEndValue=""
+                  defaultStartValue=""
+                  handleEndInput={[Function]}
+                  handleStartInput={[Function]}
+                  maxEndDate="2017-04-12"
+                  minStartDate="2017-04-09">
+                  <div
+                    className="DateRangePicker">
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="from">
+                      Date between:
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-09"
+                      id="from"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="to">
+                      and
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-12"
+                      id="to"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                  </div>
+                </Component>
+              </div>
+            </div>
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue="dislike consumers question worst get human"
+                  handleChange={[Function]}
+                  label="Label:"
+                  name="clusterLabelSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "dislike consumers question worst get human",
+                        "value": "dislike consumers question worst get human",
+                      },
+                      Object {
+                        "text": "like creators feedback best send bot",
+                        "value": "like creators feedback best send bot",
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="clusterLabelSelector">
+                      Label:
+                    </label>
+                    <select
+                      defaultValue="dislike consumers question worst get human"
+                      id="clusterLabelSelector"
+                      name="clusterLabelSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="dislike consumers question worst get human">
+                        dislike consumers question worst get human
+                      </option>
+                      <option
+                        value="like creators feedback best send bot">
+                        like creators feedback best send bot
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Error:"
+                  name="errorSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "OAuthException",
+                        "value": "OAuthException",
+                      },
+                      Object {
+                        "text": "null",
+                        "value": null,
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="errorSelector">
+                      Error:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="errorSelector"
+                      name="errorSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="OAuthException">
+                        OAuthException
+                      </option>
+                      <option
+                        value={null}>
+                        null
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Component>
+      <Component
+        conversations={
+          Array [
+            Object {
+              "end": "2017-04-09T16:41:14.390Z",
+              "errors": "OAuthException",
+              "id": 5,
+              "label": "dislike consumers question worst get human",
+              "participant": "456",
+              "start": "2017-04-09T16:41:04.681Z",
+            },
+          ]
+        }
+        handleRowClick={[Function]}>
+        <table
+          className="table table-hover">
+          <thead>
+            <tr>
+              <th>
+                participant
+              </th>
+              <th>
+                date
+              </th>
+              <th>
+                duration
+              </th>
+              <th>
+                label
+              </th>
+              <th>
+                errors
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Component
+              end="2017-04-09T16:41:14.390Z"
+              errors="OAuthException"
+              handleRowClick={[Function]}
+              id={5}
+              label="dislike consumers question worst get human"
+              participant="456"
+              start="2017-04-09T16:41:04.681Z">
+              <tr
+                id={5}
+                onClick={[Function]}>
+                <td>
+                  456
+                </td>
+                <td>
+                  April 9th 2017 18:41
+                </td>
+                <td>
+                  00:09
+                </td>
+                <td>
+                  dislike consumers question worst get human
+                </td>
+                <td>
+                  OAuthException
+                </td>
+              </tr>
+            </Component>
+          </tbody>
+        </table>
+      </Component>
+    </div>
+  </div>
+</Conversations>
+`;
+
+exports[`Conversations renders filtered conversations when state.participant is set 1`] = `
+<Conversations>
+  <div
+    className="Conversations">
+    <div
+      className="container-fluid">
+      <h1>
+        Conversations
+      </h1>
+      <Component
+        defaultEndValue=""
+        defaultErrorValue=""
+        defaultLabelValue=""
+        defaultParticipantValue="456"
+        defaultStartValue=""
+        errorOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "OAuthException",
+              "value": "OAuthException",
+            },
+            Object {
+              "text": "null",
+              "value": null,
+            },
+          ]
+        }
+        handleEndInput={[Function]}
+        handleErrorChange={[Function]}
+        handleLabelChange={[Function]}
+        handleParticipantInput={[Function]}
+        handleStartInput={[Function]}
+        labelOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "dislike consumers question worst get human",
+              "value": "dislike consumers question worst get human",
+            },
+            Object {
+              "text": "like creators feedback best send bot",
+              "value": "like creators feedback best send bot",
+            },
+          ]
+        }
+        maxEndDate="2017-04-12"
+        minStartDate="2017-04-09"
+        participantList={
+          Array [
+            "123",
+            "456",
+          ]
+        }>
+        <div
+          className="FilterForm">
+          <div
+            className="container-fluid">
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultParticipantValue="456"
+                  handleInput={[Function]}
+                  options={
+                    Array [
+                      "123",
+                      "456",
+                    ]
+                  }>
+                  <div
+                    className="form-group SearchField">
+                    <label
+                      className="SearchLabel"
+                      htmlFor="participants">
+                      Participant:
+                    </label>
+                    <input
+                      className="SearchInput"
+                      defaultValue="456"
+                      list="participants"
+                      onInput={[Function]} />
+                    <datalist
+                      id="participants">
+                      <option
+                        value="123" />
+                      <option
+                        value="456" />
+                    </datalist>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultEndValue=""
+                  defaultStartValue=""
+                  handleEndInput={[Function]}
+                  handleStartInput={[Function]}
+                  maxEndDate="2017-04-12"
+                  minStartDate="2017-04-09">
+                  <div
+                    className="DateRangePicker">
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="from">
+                      Date between:
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-09"
+                      id="from"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="to">
+                      and
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-12"
+                      id="to"
+                      max="2017-04-12"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                  </div>
+                </Component>
+              </div>
+            </div>
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Label:"
+                  name="clusterLabelSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "dislike consumers question worst get human",
+                        "value": "dislike consumers question worst get human",
+                      },
+                      Object {
+                        "text": "like creators feedback best send bot",
+                        "value": "like creators feedback best send bot",
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="clusterLabelSelector">
+                      Label:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="clusterLabelSelector"
+                      name="clusterLabelSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="dislike consumers question worst get human">
+                        dislike consumers question worst get human
+                      </option>
+                      <option
+                        value="like creators feedback best send bot">
+                        like creators feedback best send bot
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Error:"
+                  name="errorSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "OAuthException",
+                        "value": "OAuthException",
+                      },
+                      Object {
+                        "text": "null",
+                        "value": null,
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="errorSelector">
+                      Error:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="errorSelector"
+                      name="errorSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="OAuthException">
+                        OAuthException
+                      </option>
+                      <option
+                        value={null}>
+                        null
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Component>
+      <Component
+        conversations={
+          Array [
+            Object {
+              "end": "2017-04-09T16:41:14.390Z",
+              "errors": "OAuthException",
+              "id": 5,
+              "label": "dislike consumers question worst get human",
+              "participant": "456",
+              "start": "2017-04-09T16:41:04.681Z",
+            },
+          ]
+        }
+        handleRowClick={[Function]}>
+        <table
+          className="table table-hover">
+          <thead>
+            <tr>
+              <th>
+                participant
+              </th>
+              <th>
+                date
+              </th>
+              <th>
+                duration
+              </th>
+              <th>
+                label
+              </th>
+              <th>
+                errors
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Component
+              end="2017-04-09T16:41:14.390Z"
+              errors="OAuthException"
+              handleRowClick={[Function]}
+              id={5}
+              label="dislike consumers question worst get human"
+              participant="456"
+              start="2017-04-09T16:41:04.681Z">
+              <tr
+                id={5}
+                onClick={[Function]}>
+                <td>
+                  456
+                </td>
+                <td>
+                  April 9th 2017 18:41
+                </td>
+                <td>
+                  00:09
+                </td>
+                <td>
+                  dislike consumers question worst get human
+                </td>
+                <td>
+                  OAuthException
+                </td>
+              </tr>
+            </Component>
+          </tbody>
+        </table>
+      </Component>
+    </div>
+  </div>
+</Conversations>
+`;
+
+exports[`Conversations renders filtered conversations when state.startDate and endDate is set 1`] = `
+<Conversations>
+  <div
+    className="Conversations">
+    <div
+      className="container-fluid">
+      <h1>
+        Conversations
+      </h1>
+      <Component
+        defaultEndValue="2017-04-11"
+        defaultErrorValue=""
+        defaultLabelValue=""
+        defaultParticipantValue=""
+        defaultStartValue="2017-04-08"
+        errorOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "OAuthException",
+              "value": "OAuthException",
+            },
+            Object {
+              "text": "null",
+              "value": null,
+            },
+          ]
+        }
+        handleEndInput={[Function]}
+        handleErrorChange={[Function]}
+        handleLabelChange={[Function]}
+        handleParticipantInput={[Function]}
+        handleStartInput={[Function]}
+        labelOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+            Object {
+              "text": "dislike consumers question worst get human",
+              "value": "dislike consumers question worst get human",
+            },
+            Object {
+              "text": "like creators feedback best send bot",
+              "value": "like creators feedback best send bot",
+            },
+          ]
+        }
+        maxEndDate="2017-04-12"
+        minStartDate="2017-04-09"
+        participantList={
+          Array [
+            "123",
+            "456",
+          ]
+        }>
+        <div
+          className="FilterForm">
+          <div
+            className="container-fluid">
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultParticipantValue=""
+                  handleInput={[Function]}
+                  options={
+                    Array [
+                      "123",
+                      "456",
+                    ]
+                  }>
+                  <div
+                    className="form-group SearchField">
+                    <label
+                      className="SearchLabel"
+                      htmlFor="participants">
+                      Participant:
+                    </label>
+                    <input
+                      className="SearchInput"
+                      defaultValue=""
+                      list="participants"
+                      onInput={[Function]} />
+                    <datalist
+                      id="participants">
+                      <option
+                        value="123" />
+                      <option
+                        value="456" />
+                    </datalist>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultEndValue="2017-04-11"
+                  defaultStartValue="2017-04-08"
+                  handleEndInput={[Function]}
+                  handleStartInput={[Function]}
+                  maxEndDate="2017-04-12"
+                  minStartDate="2017-04-09">
+                  <div
+                    className="DateRangePicker">
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="from">
+                      Date between:
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-08"
+                      id="from"
+                      max="2017-04-11"
+                      min="2017-04-09"
+                      onInput={[Function]}
+                      type="date" />
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="to">
+                      and
+                    </label>
+                    <input
+                      className="DateInput"
+                      defaultValue="2017-04-11"
+                      id="to"
+                      max="2017-04-12"
+                      min="2017-04-08"
+                      onInput={[Function]}
+                      type="date" />
+                  </div>
+                </Component>
+              </div>
+            </div>
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Label:"
+                  name="clusterLabelSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "dislike consumers question worst get human",
+                        "value": "dislike consumers question worst get human",
+                      },
+                      Object {
+                        "text": "like creators feedback best send bot",
+                        "value": "like creators feedback best send bot",
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="clusterLabelSelector">
+                      Label:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="clusterLabelSelector"
+                      name="clusterLabelSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="dislike consumers question worst get human">
+                        dislike consumers question worst get human
+                      </option>
+                      <option
+                        value="like creators feedback best send bot">
+                        like creators feedback best send bot
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Error:"
+                  name="errorSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                      Object {
+                        "text": "OAuthException",
+                        "value": "OAuthException",
+                      },
+                      Object {
+                        "text": "null",
+                        "value": null,
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="errorSelector">
+                      Error:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="errorSelector"
+                      name="errorSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                      <option
+                        value="OAuthException">
+                        OAuthException
+                      </option>
+                      <option
+                        value={null}>
+                        null
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Component>
+      <Component
+        conversations={
+          Array [
+            Object {
+              "end": "2017-04-09T16:41:14.390Z",
+              "errors": "OAuthException",
+              "id": 5,
+              "label": "dislike consumers question worst get human",
+              "participant": "456",
+              "start": "2017-04-09T16:41:04.681Z",
+            },
+          ]
+        }
+        handleRowClick={[Function]}>
+        <table
+          className="table table-hover">
+          <thead>
+            <tr>
+              <th>
+                participant
+              </th>
+              <th>
+                date
+              </th>
+              <th>
+                duration
+              </th>
+              <th>
+                label
+              </th>
+              <th>
+                errors
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <Component
+              end="2017-04-09T16:41:14.390Z"
+              errors="OAuthException"
+              handleRowClick={[Function]}
+              id={5}
+              label="dislike consumers question worst get human"
+              participant="456"
+              start="2017-04-09T16:41:04.681Z">
+              <tr
+                id={5}
+                onClick={[Function]}>
+                <td>
+                  456
+                </td>
+                <td>
+                  April 9th 2017 18:41
+                </td>
+                <td>
+                  00:09
+                </td>
+                <td>
+                  dislike consumers question worst get human
+                </td>
+                <td>
+                  OAuthException
+                </td>
+              </tr>
+            </Component>
+          </tbody>
+        </table>
+      </Component>
+    </div>
+  </div>
+</Conversations>
+`;
+
+exports[`Conversations renders placeholder text when state.conversations is empty 1`] = `
+<Conversations>
+  <div
+    className="Conversations">
+    <div
+      className="container-fluid">
+      <h1>
+        Conversations
+      </h1>
+      <Component
+        defaultEndValue=""
+        defaultErrorValue=""
+        defaultLabelValue=""
+        defaultParticipantValue=""
+        defaultStartValue=""
+        errorOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+          ]
+        }
+        handleEndInput={[Function]}
+        handleErrorChange={[Function]}
+        handleLabelChange={[Function]}
+        handleParticipantInput={[Function]}
+        handleStartInput={[Function]}
+        labelOptions={
+          Array [
+            Object {
+              "text": "---",
+              "value": "",
+            },
+          ]
+        }
+        participantList={Array []}>
+        <div
+          className="FilterForm">
+          <div
+            className="container-fluid">
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultParticipantValue=""
+                  handleInput={[Function]}
+                  options={Array []}>
+                  <div
+                    className="form-group SearchField">
+                    <label
+                      className="SearchLabel"
+                      htmlFor="participants">
+                      Participant:
+                    </label>
+                    <input
+                      className="SearchInput"
+                      defaultValue=""
+                      list="participants"
+                      onInput={[Function]} />
+                    <datalist
+                      id="participants" />
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultEndValue=""
+                  defaultStartValue=""
+                  handleEndInput={[Function]}
+                  handleStartInput={[Function]}>
+                  <div
+                    className="DateRangePicker">
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="from">
+                      Date between:
+                    </label>
+                    <input
+                      className="DateInput"
+                      id="from"
+                      onInput={[Function]}
+                      type="date" />
+                    <label
+                      className="DatePickerLabel"
+                      htmlFor="to">
+                      and
+                    </label>
+                    <input
+                      className="DateInput"
+                      id="to"
+                      onInput={[Function]}
+                      type="date" />
+                  </div>
+                </Component>
+              </div>
+            </div>
+            <div
+              className="row">
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Label:"
+                  name="clusterLabelSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="clusterLabelSelector">
+                      Label:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="clusterLabelSelector"
+                      name="clusterLabelSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+              <div
+                className="col-sm-6 col-md-6 col-lg-6 text-center">
+                <Component
+                  defaultValue=""
+                  handleChange={[Function]}
+                  label="Error:"
+                  name="errorSelector"
+                  options={
+                    Array [
+                      Object {
+                        "text": "---",
+                        "value": "",
+                      },
+                    ]
+                  }>
+                  <div
+                    className="SelectField">
+                    <label
+                      className="SelectLabel"
+                      htmlFor="errorSelector">
+                      Error:
+                    </label>
+                    <select
+                      defaultValue=""
+                      id="errorSelector"
+                      name="errorSelector"
+                      onChange={[Function]}>
+                      <option
+                        value="">
+                        ---
+                      </option>
+                    </select>
+                  </div>
+                </Component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Component>
+      <Component
+        conversations={Array []}
+        handleRowClick={[Function]}>
+        <table
+          className="table table-hover">
+          <thead>
+            <tr>
+              <th>
+                participant
+              </th>
+              <th>
+                date
+              </th>
+              <th>
+                duration
+              </th>
+              <th>
+                label
+              </th>
+              <th>
+                errors
+              </th>
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </Component>
+      <div
+        className="NoConversations text-center">
+        <h2>
+          No conversations to display.
+        </h2>
+      </div>
+    </div>
+  </div>
+</Conversations>
+`;

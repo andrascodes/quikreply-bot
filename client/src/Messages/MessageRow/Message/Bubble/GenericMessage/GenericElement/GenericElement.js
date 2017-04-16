@@ -2,6 +2,7 @@ import React from 'react'
 
 import './GenericElement.css'
 
+// image_url, title, subtitle, default_action.url, buttons, btn.title
 export const GenericElement = props => {
   return (
     <div className="GenericElement">

@@ -1,0 +1,127 @@
+exports[`DateRangePicker renders correctly 1`] = `
+<div
+  className="DateRangePicker">
+  <label
+    className="DatePickerLabel"
+    htmlFor="from">
+    Date between:
+  </label>
+  <input
+    className="DateInput"
+    defaultValue="2017-04-15"
+    id="from"
+    max="2017-04-20"
+    min="2017-04-13"
+    onInput={[Function]}
+    type="date" />
+  <label
+    className="DatePickerLabel"
+    htmlFor="to">
+    and
+  </label>
+  <input
+    className="DateInput"
+    defaultValue="2017-04-20"
+    id="to"
+    max="2017-05-14"
+    min="2017-04-15"
+    onInput={[Function]}
+    type="date" />
+</div>
+`;
+
+exports[`DateRangePicker renders correctly when no defaultValue is set 1`] = `
+<div
+  className="DateRangePicker">
+  <label
+    className="DatePickerLabel"
+    htmlFor="from">
+    Date between:
+  </label>
+  <input
+    className="DateInput"
+    defaultValue="2017-04-13"
+    id="from"
+    max="2017-05-14"
+    min="2017-04-13"
+    onInput={[Function]}
+    type="date" />
+  <label
+    className="DatePickerLabel"
+    htmlFor="to">
+    and
+  </label>
+  <input
+    className="DateInput"
+    defaultValue="2017-05-14"
+    id="to"
+    max="2017-05-14"
+    min="2017-04-13"
+    onInput={[Function]}
+    type="date" />
+</div>
+`;
+
+exports[`DateRangePicker renders correctly when no minDate is set 1`] = `
+<div
+  className="DateRangePicker">
+  <label
+    className="DatePickerLabel"
+    htmlFor="from">
+    Date between:
+  </label>
+  <input
+    className="DateInput"
+    defaultValue="2017-04-15"
+    id="from"
+    max="2017-04-20"
+    min={undefined}
+    onInput={[Function]}
+    type="date" />
+  <label
+    className="DatePickerLabel"
+    htmlFor="to">
+    and
+  </label>
+  <input
+    className="DateInput"
+    defaultValue="2017-04-20"
+    id="to"
+    max={undefined}
+    min="2017-04-15"
+    onInput={[Function]}
+    type="date" />
+</div>
+`;
+
+exports[`DateRangePicker renders correctly when no minDate or defaultValue is set 1`] = `
+<div
+  className="DateRangePicker">
+  <label
+    className="DatePickerLabel"
+    htmlFor="from">
+    Date between:
+  </label>
+  <input
+    className="DateInput"
+    defaultValue={undefined}
+    id="from"
+    max={undefined}
+    min={undefined}
+    onInput={[Function]}
+    type="date" />
+  <label
+    className="DatePickerLabel"
+    htmlFor="to">
+    and
+  </label>
+  <input
+    className="DateInput"
+    defaultValue={undefined}
+    id="to"
+    max={undefined}
+    min={undefined}
+    onInput={[Function]}
+    type="date" />
+</div>
+`;

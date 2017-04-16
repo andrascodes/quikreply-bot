@@ -1,0 +1,45 @@
+exports[`SearchField renders correctly 1`] = `
+<div
+  className="form-group SearchField">
+  <label
+    className="SearchLabel"
+    htmlFor="participants">
+    Participant:
+  </label>
+  <input
+    className="SearchInput"
+    defaultValue="123"
+    list="participants"
+    onInput={[Function]} />
+  <datalist
+    id="participants">
+    <option
+      value="123" />
+    <option
+      value="456" />
+  </datalist>
+</div>
+`;
+
+exports[`SearchField renders correctly when no defaultValue is set 1`] = `
+<div
+  className="form-group SearchField">
+  <label
+    className="SearchLabel"
+    htmlFor="participants">
+    Participant:
+  </label>
+  <input
+    className="SearchInput"
+    defaultValue={undefined}
+    list="participants"
+    onInput={[Function]} />
+  <datalist
+    id="participants">
+    <option
+      value="123" />
+    <option
+      value="456" />
+  </datalist>
+</div>
+`;

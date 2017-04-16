@@ -1,0 +1,17 @@
+exports[`ButtonMessage renders correctly 1`] = `
+<div
+  className="ButtonMessage">
+  <div
+    className="ButtonMessageText ButtonDataContainer">
+    Message Text
+  </div>
+  <div
+    className="ButtonMessageButton ButtonDataContainer text-center">
+    Btn title1
+  </div>
+  <div
+    className="ButtonMessageButton ButtonDataContainer text-center">
+    Btn title2
+  </div>
+</div>
+`;

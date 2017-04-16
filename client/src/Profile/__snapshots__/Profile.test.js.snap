@@ -1,0 +1,313 @@
+exports[`Profile renders Error when state.error is defined to anything else 1`] = `
+<Profile
+  error={
+    Object {
+      "status": 500,
+    }
+  }>
+  <div
+    className="Conversations">
+    <Component>
+      <div
+        className="container-fluid">
+        <h2>
+          Error. 
+          Try again later!
+        </h2>
+      </div>
+    </Component>
+  </div>
+</Profile>
+`;
+
+exports[`Profile renders correctly 1`] = `
+<Profile>
+  <div
+    className="Profile">
+    <div
+      className="container-fluid">
+      <h1>
+        Profile
+      </h1>
+      <form
+        className="ProfileForm"
+        onSubmit={[Function]}
+        role="form">
+        <fieldset>
+          <div
+            className="form-group">
+            <label
+              htmlFor="emailInput">
+              Email
+            </label>
+            <input
+              className="form-control"
+              defaultValue="admin@mail.com"
+              id="emailInput"
+              onChange={[Function]}
+              placeholder="Email"
+              type="email" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="usernameInput">
+              Username
+            </label>
+            <input
+              className="form-control"
+              defaultValue="admin"
+              id="usernameInput"
+              onChange={[Function]}
+              placeholder="Username"
+              type="text" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="passwordInput">
+              New Password
+            </label>
+            <input
+              className="form-control"
+              id="passwordInput"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password" />
+          </div>
+          <button
+            className="btn btn-default"
+            type="submit">
+            Submit
+          </button>
+          <div
+            className="ProfileTip">
+            <small>
+              You will have to sign in again, after submitting this form.
+            </small>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Profile renders the email when state.email is changed 1`] = `
+<Profile>
+  <div
+    className="Profile">
+    <div
+      className="container-fluid">
+      <h1>
+        Profile
+      </h1>
+      <form
+        className="ProfileForm"
+        onSubmit={[Function]}
+        role="form">
+        <fieldset>
+          <div
+            className="form-group">
+            <label
+              htmlFor="emailInput">
+              Email
+            </label>
+            <input
+              className="form-control"
+              defaultValue="email@mail.com"
+              id="emailInput"
+              onChange={[Function]}
+              placeholder="Email"
+              type="email" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="usernameInput">
+              Username
+            </label>
+            <input
+              className="form-control"
+              defaultValue="admin"
+              id="usernameInput"
+              onChange={[Function]}
+              placeholder="Username"
+              type="text" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="passwordInput">
+              New Password
+            </label>
+            <input
+              className="form-control"
+              id="passwordInput"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password" />
+          </div>
+          <button
+            className="btn btn-default"
+            type="submit">
+            Submit
+          </button>
+          <div
+            className="ProfileTip">
+            <small>
+              You will have to sign in again, after submitting this form.
+            </small>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Profile renders the username when state.username is changed 1`] = `
+<Profile>
+  <div
+    className="Profile">
+    <div
+      className="container-fluid">
+      <h1>
+        Profile
+      </h1>
+      <form
+        className="ProfileForm"
+        onSubmit={[Function]}
+        role="form">
+        <fieldset>
+          <div
+            className="form-group">
+            <label
+              htmlFor="emailInput">
+              Email
+            </label>
+            <input
+              className="form-control"
+              defaultValue="admin@mail.com"
+              id="emailInput"
+              onChange={[Function]}
+              placeholder="Email"
+              type="email" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="usernameInput">
+              Username
+            </label>
+            <input
+              className="form-control"
+              defaultValue="user_1"
+              id="usernameInput"
+              onChange={[Function]}
+              placeholder="Username"
+              type="text" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="passwordInput">
+              New Password
+            </label>
+            <input
+              className="form-control"
+              id="passwordInput"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password" />
+          </div>
+          <button
+            className="btn btn-default"
+            type="submit">
+            Submit
+          </button>
+          <div
+            className="ProfileTip">
+            <small>
+              You will have to sign in again, after submitting this form.
+            </small>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Profile renders when state.password is changed 1`] = `
+<Profile>
+  <div
+    className="Profile">
+    <div
+      className="container-fluid">
+      <h1>
+        Profile
+      </h1>
+      <form
+        className="ProfileForm"
+        onSubmit={[Function]}
+        role="form">
+        <fieldset>
+          <div
+            className="form-group">
+            <label
+              htmlFor="emailInput">
+              Email
+            </label>
+            <input
+              className="form-control"
+              defaultValue="admin@mail.com"
+              id="emailInput"
+              onChange={[Function]}
+              placeholder="Email"
+              type="email" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="usernameInput">
+              Username
+            </label>
+            <input
+              className="form-control"
+              defaultValue="admin"
+              id="usernameInput"
+              onChange={[Function]}
+              placeholder="Username"
+              type="text" />
+          </div>
+          <div
+            className="form-group">
+            <label
+              htmlFor="passwordInput">
+              New Password
+            </label>
+            <input
+              className="form-control"
+              id="passwordInput"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password" />
+          </div>
+          <button
+            className="btn btn-default"
+            type="submit">
+            Submit
+          </button>
+          <div
+            className="ProfileTip">
+            <small>
+              You will have to sign in again, after submitting this form.
+            </small>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;

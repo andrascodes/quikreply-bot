@@ -1,0 +1,19 @@
+exports[`Error renders correctly with or without specifying props.text 1`] = `
+<div
+  className="container-fluid">
+  <h2>
+    Error. 
+    Try again later!
+  </h2>
+</div>
+`;
+
+exports[`Error renders correctly with or without specifying props.text 2`] = `
+<div
+  className="container-fluid">
+  <h2>
+    Error. 
+    Please try again later!
+  </h2>
+</div>
+`;

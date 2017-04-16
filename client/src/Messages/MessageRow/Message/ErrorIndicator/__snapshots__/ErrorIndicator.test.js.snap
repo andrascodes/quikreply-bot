@@ -1,0 +1,14 @@
+exports[`ErrorIndicator renders correctly 1`] = `
+<div
+  className="ErrorIndicator">
+  Error: 
+  <span
+    className="ErrorStyle">
+    OAuthException #200
+  </span>
+  <i
+    className="fa fa-times ErrorStyle Icon" />
+</div>
+`;
+
+exports[`ErrorIndicator renders correctly when value is falsy 1`] = `<div />`;

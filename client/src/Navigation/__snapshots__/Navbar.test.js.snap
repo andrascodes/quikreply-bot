@@ -1,0 +1,86 @@
+exports[`Navbar renders correctly 1`] = `
+<nav
+  className="navbar navbar-inverse navbar-fixed-top">
+  <div
+    className="container-fluid">
+    <div
+      className="navbar-header">
+      <a
+        href="/"
+        onClick={[Function]}>
+        <div
+          className="navbar-brand" />
+      </a>
+    </div>
+    <ul
+      className="nav navbar-nav navbar-right">
+      <li
+        className="dropdown"
+        style={undefined}>
+        <a
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle"
+          href="#"
+          id="NavDropdownMenu"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button">
+          <i
+            className="fa fa-user NavDropdownIcon" />
+           
+          <span
+            className="caret" />
+        </a>
+        <ul
+          aria-labelledby="NavDropdownMenu"
+          className="dropdown-menu"
+          role="menu">
+          <li
+            className="dropdown-header"
+            onKeyDown={[Function]}
+            role="heading"
+            style={undefined}>
+            <div
+              className="NavDropdownUsername">
+              Signed in as 
+              \'admin\'
+            </div>
+          </li>
+          <li
+            className="divider"
+            onKeyDown={[Function]}
+            role="separator"
+            style={undefined} />
+          <li
+            className="ProfileLink"
+            role="presentation"
+            style={undefined}>
+            <a
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex="-1">
+              Profile
+            </a>
+          </li>
+          <li
+            className="SignOutLink"
+            role="presentation"
+            style={undefined}>
+            <a
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex="-1">
+              Sign out
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;

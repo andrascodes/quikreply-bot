@@ -1,0 +1,49 @@
+exports[`SelectField renders correctly 1`] = `
+<div
+  className="SelectField">
+  <label
+    className="SelectLabel"
+    htmlFor="selectfield">
+    Label
+  </label>
+  <select
+    defaultValue="null"
+    id="selectfield"
+    name="selectfield"
+    onChange={[Function]}>
+    <option
+      value="label1 label2">
+      label1 label2
+    </option>
+    <option
+      value="label3 label4">
+      label3 label4
+    </option>
+  </select>
+</div>
+`;
+
+exports[`SelectField renders correctly when no defaultValue is set 1`] = `
+<div
+  className="SelectField">
+  <label
+    className="SelectLabel"
+    htmlFor="selectfield">
+    Label
+  </label>
+  <select
+    defaultValue={undefined}
+    id="selectfield"
+    name="selectfield"
+    onChange={[Function]}>
+    <option
+      value="label1 label2">
+      label1 label2
+    </option>
+    <option
+      value="label3 label4">
+      label3 label4
+    </option>
+  </select>
+</div>
+`;

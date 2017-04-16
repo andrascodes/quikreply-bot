@@ -1,0 +1,45 @@
+exports[`ConversationTable renders correctly 1`] = `
+<table
+  className="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        participant
+      </th>
+      <th>
+        date
+      </th>
+      <th>
+        duration
+      </th>
+      <th>
+        label
+      </th>
+      <th>
+        errors
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      id={1}
+      onClick={[Function]}>
+      <td>
+        123
+      </td>
+      <td>
+        April 13th 2017 12:00
+      </td>
+      <td>
+        02:00
+      </td>
+      <td>
+        label1 label2
+      </td>
+      <td>
+        OAuthException
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

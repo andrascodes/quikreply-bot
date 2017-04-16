@@ -1,0 +1,111 @@
+exports[`FilterForm renders correctly 1`] = `
+<div
+  className="FilterForm">
+  <div
+    className="container-fluid">
+    <div
+      className="row">
+      <div
+        className="col-sm-6 col-md-6 col-lg-6 text-center">
+        <div
+          className="form-group SearchField">
+          <label
+            className="SearchLabel"
+            htmlFor="participants">
+            Participant:
+          </label>
+          <input
+            className="SearchInput"
+            defaultValue="123"
+            list="participants"
+            onInput={[Function]} />
+          <datalist
+            id="participants">
+            <option
+              value="123" />
+            <option
+              value="456" />
+          </datalist>
+        </div>
+      </div>
+      <div
+        className="col-sm-6 col-md-6 col-lg-6 text-center">
+        <div
+          className="DateRangePicker">
+          <label
+            className="DatePickerLabel"
+            htmlFor="from">
+            Date between:
+          </label>
+          <input
+            className="DateInput"
+            defaultValue="2017-04-15"
+            id="from"
+            max="2017-04-20"
+            min="2017-04-13"
+            onInput={[Function]}
+            type="date" />
+          <label
+            className="DatePickerLabel"
+            htmlFor="to">
+            and
+          </label>
+          <input
+            className="DateInput"
+            defaultValue="2017-04-20"
+            id="to"
+            max="2017-05-14"
+            min="2017-04-15"
+            onInput={[Function]}
+            type="date" />
+        </div>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-sm-6 col-md-6 col-lg-6 text-center">
+        <div
+          className="SelectField">
+          <label
+            className="SelectLabel"
+            htmlFor="clusterLabelSelector">
+            Label:
+          </label>
+          <select
+            defaultValue="null"
+            id="clusterLabelSelector"
+            name="clusterLabelSelector"
+            onChange={[Function]}>
+            <option
+              value="label1 label2">
+              label1 label2
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="col-sm-6 col-md-6 col-lg-6 text-center">
+        <div
+          className="SelectField">
+          <label
+            className="SelectLabel"
+            htmlFor="errorSelector">
+            Error:
+          </label>
+          <select
+            defaultValue="----"
+            id="errorSelector"
+            name="errorSelector"
+            onChange={[Function]}>
+            <option
+              value="OAuthException">
+              OAuthException
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

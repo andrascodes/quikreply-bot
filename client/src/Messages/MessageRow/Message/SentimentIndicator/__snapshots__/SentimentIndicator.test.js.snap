@@ -1,0 +1,40 @@
+exports[`SentimentIndicator renders correctly 1`] = `
+<div
+  className="Sentiment">
+  Sentiment: 
+  <span
+    className="Positive">
+    positive
+  </span>
+  <i
+    className="fa fa-check Positive Icon" />
+</div>
+`;
+
+exports[`SentimentIndicator renders correctly 2`] = `
+<div
+  className="Sentiment">
+  Sentiment: 
+  <span
+    className="Negative">
+    negative
+  </span>
+  <i
+    className="fa fa-times Negative Icon" />
+</div>
+`;
+
+exports[`SentimentIndicator renders correctly 3`] = `
+<div
+  className="Sentiment">
+  Sentiment: 
+  <span
+    className="Neutral">
+    neutral
+  </span>
+  <i
+    className="fa fa-check Neutral Icon" />
+</div>
+`;
+
+exports[`SentimentIndicator renders correctly when value is falsy 1`] = `<div />`;

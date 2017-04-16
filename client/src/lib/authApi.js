@@ -50,12 +50,12 @@ export const createAuthApi = (fetch) => {
         }),
         body: JSON.stringify({ email })
       })
-      .then(res => Promise.all([res.status, res.ok, res]))
-      .then(([status, ok, res]) => {
+      .then(res => Promise.all([res.status, res.ok, res.statusText]))
+      .then(([status, ok, statusText]) => {
         if(!ok) {
-          return Promise.reject({status, statusText: res.statusText})
+          return Promise.reject({status, statusText})
         }
-        return res
+        return ({status, ok, statusText})
       })
     }  
 

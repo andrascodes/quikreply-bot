@@ -1,6 +1,10 @@
 import React from 'react'
 
 export const SelectField = props => {
+
+  if(!props.options) {
+    throw new Error(`The prop 'options' has to be defined, pass an empty array ([])`)
+  }
   
   const options = props.options.map(opt => <option value={opt.value} key={opt.value}>{opt.text}</option> )
 

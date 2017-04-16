@@ -14,12 +14,12 @@ export class Messages extends Component {
 
     this.state = {
       id: props.match.params.id,
-      messages: undefined,
-      participant: '',
-      startDate: new Date(),
-      endDate: new Date(),
-      label: '',
-      error: false
+      messages: props.messages || undefined,
+      participant: props.participant || '',
+      startDate: props.startDate || new Date(),
+      endDate: props.endDate || new Date(),
+      label: props.label || '',
+      error: props.error || false
     }
   }
 

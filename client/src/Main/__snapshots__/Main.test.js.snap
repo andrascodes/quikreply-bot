@@ -1,0 +1,13 @@
+exports[`Main renders correctly 1`] = `
+<div
+  className="Main" />
+`;
+
+exports[`Main renders correctly 2`] = `
+<div
+  className="Main">
+  <h1>
+    Children
+  </h1>
+</div>
+`;

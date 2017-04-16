@@ -3,7 +3,7 @@ import React from 'react'
 import { formatDate, calculateDuration } from '../../../lib/dateManipulation'
 
 export const ConversationRow = props => (
-  <tr onClick={props.handleRowClick}>
+  <tr id={props.id} onClick={props.handleRowClick}>
     <td>{props.participant}</td>
     <td>{formatDate(props.start)}</td>
     <td>{calculateDuration(props.start, props.end)}</td>
@@ -13,6 +13,7 @@ export const ConversationRow = props => (
 )
 
 ConversationRow.PropTypes = {
+  id: React.PropTypes.number,
   handleRowClick: React.PropTypes.func.isRequired,
   participant: React.PropTypes.string.isRequired,
   start: React.PropTypes.string.isRequired,

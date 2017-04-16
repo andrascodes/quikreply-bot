@@ -12,7 +12,7 @@ export class Profile extends Component {
     username: (localStorage.username || ''),
     email: (localStorage.email && (localStorage.email === 'null' ? '' : localStorage.email)) || '',
     password: '',
-    error: false
+    error: this.props.error || false
   }
 
   putUserProfile = createAuthApi(fetch).putUserProfile

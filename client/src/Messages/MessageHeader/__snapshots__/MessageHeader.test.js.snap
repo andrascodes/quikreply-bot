@@ -1,0 +1,68 @@
+exports[`MessageHeader renders correctly 1`] = `
+<div>
+  <div
+    className="MessageHeader">
+    <div
+      className="container-fluid">
+      <div
+        className="row">
+        <div
+          className="col-lg-4 col-md-4 col-sm-4 text-left">
+          <a
+            href="/conversations"
+            onClick={[Function]}>
+            Back
+          </a>
+        </div>
+        <div
+          className="col-lg-4 col-md-4 col-sm-4 text-center header-item">
+          <div />
+        </div>
+        <div
+          className="col-lg-4 col-md-4 col-sm-4 text-right header-item" />
+      </div>
+    </div>
+  </div>
+  <div
+    className="Label text-center">
+    Label: 
+  </div>
+</div>
+`;
+
+exports[`MessageHeader renders correctly with props 1`] = `
+<div>
+  <div
+    className="MessageHeader">
+    <div
+      className="container-fluid">
+      <div
+        className="row">
+        <div
+          className="col-lg-4 col-md-4 col-sm-4 text-left">
+          <a
+            href="/conversations"
+            onClick={[Function]}>
+            Back
+          </a>
+        </div>
+        <div
+          className="col-lg-4 col-md-4 col-sm-4 text-center header-item">
+          <div>
+            123
+          </div>
+        </div>
+        <div
+          className="col-lg-4 col-md-4 col-sm-4 text-right header-item">
+          April 28th 2017 12:05
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Label text-center">
+    Label: 
+    label1 label2 label3
+  </div>
+</div>
+`;

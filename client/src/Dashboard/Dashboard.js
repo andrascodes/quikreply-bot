@@ -42,7 +42,7 @@ export class Dashboard extends Component {
         notDeliveredMessages: 0,
         messageErrors: 0
       },
-      error: false,
+      error: this.props.error || false,
     }
   }
   

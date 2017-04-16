@@ -48,8 +48,8 @@ export const Navbar = withRouter(props => {
               </div>
             </MenuItem>
             <MenuItem divider/>
-            <MenuItem onClick={handleProfileClick}>Profile</MenuItem>
-            <MenuItem onClick={handleSignOutClick}>Sign out</MenuItem>
+            <MenuItem onClick={props.onProfileClick || handleProfileClick} className="ProfileLink">Profile</MenuItem>
+            <MenuItem onClick={props.onSignOutClick || handleSignOutClick} className="SignOutLink">Sign out</MenuItem>
           </NavDropdown>
         </ul>
       </div>

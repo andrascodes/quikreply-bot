@@ -1,0 +1,56 @@
+exports[`Message renders correctly 1`] = `
+<div>
+  <div
+    className="TimeIndicator text-center">
+    Arrived at 
+    17:16:55
+  </div>
+  <div>
+    <div
+      className="Incoming Bubble ErrorBubble"
+      data-tip="React tooltip">
+      <div
+        className="TextMessage">
+        Incoming text message
+      </div>
+    </div>
+    <div
+      className="ErrorTooltip">
+      <div
+        className="__react_component_tooltip place-top type-dark "
+        data-id="tooltip">
+        
+      </div>
+    </div>
+  </div>
+  <div
+    className="row Indicators">
+    <div
+      className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+      <div
+        className="Sentiment">
+        Sentiment: 
+        <span
+          className="Neutral">
+          neutral
+        </span>
+        <i
+          className="fa fa-check Neutral Icon" />
+      </div>
+    </div>
+    <div
+      className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+      <div
+        className="ErrorIndicator">
+        Error: 
+        <span
+          className="ErrorStyle">
+          OAuthException #200
+        </span>
+        <i
+          className="fa fa-times ErrorStyle Icon" />
+      </div>
+    </div>
+  </div>
+</div>
+`;

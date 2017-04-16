@@ -1,0 +1,46 @@
+exports[`Messages renders Error when state.error is truthy 1`] = `
+<Messages
+  error={
+    Object {
+      "status": 500,
+    }
+  }
+  match={
+    Object {
+      "params": Object {
+        "id": 1,
+      },
+    }
+  }>
+  <div
+    className="Messages">
+    <Component>
+      <div
+        className="container-fluid">
+        <h2>
+          Error. 
+          Try again later!
+        </h2>
+      </div>
+    </Component>
+  </div>
+</Messages>
+`;
+
+exports[`Messages renders Loading when state.message is undefined 1`] = `
+<Messages
+  match={
+    Object {
+      "params": Object {
+        "id": 1,
+      },
+    }
+  }>
+  <div
+    className="Messages">
+    <h2>
+      Loading...
+    </h2>
+  </div>
+</Messages>
+`;

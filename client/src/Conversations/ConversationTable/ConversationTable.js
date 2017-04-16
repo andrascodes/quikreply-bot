@@ -4,6 +4,10 @@ import { ConversationRow } from './ConversationRow'
 
 export const ConversationTable = props => {
 
+  if(!props.conversations) {
+    throw new Error(`The prop 'conversations' has to be defined, pass an empty array ([])`)
+  }
+
   const rows = props.conversations.map(convo => (
     <ConversationRow 
       key={convo.id}

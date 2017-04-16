@@ -1,0 +1,127 @@
+exports[`Panel renders with panel-danger class when previous is more than number 1`] = `
+<div
+  className="panel panel-danger">
+  <div
+    className="panel-heading">
+    <div
+      className="row">
+      <div
+        className="col-xs-3">
+        <i
+          className="fa fa-car fa-5x" />
+      </div>
+      <div
+        className="col-xs-9 text-right">
+        <div
+          className="huge"
+          style={
+            Object {
+              "fontSize": "40px",
+            }
+          }>
+          1
+        </div>
+        <div>
+          Panel
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Panel renders with panel-info class when previous is not set 1`] = `
+<div
+  className="panel panel-info">
+  <div
+    className="panel-heading">
+    <div
+      className="row">
+      <div
+        className="col-xs-3">
+        <i
+          className="fa fa-car fa-5x" />
+      </div>
+      <div
+        className="col-xs-9 text-right">
+        <div
+          className="huge"
+          style={
+            Object {
+              "fontSize": "40px",
+            }
+          }>
+          1
+        </div>
+        <div>
+          Panel
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Panel renders with panel-success class when previous is less than number 1`] = `
+<div
+  className="panel panel-success">
+  <div
+    className="panel-heading">
+    <div
+      className="row">
+      <div
+        className="col-xs-3">
+        <i
+          className="fa fa-car fa-5x" />
+      </div>
+      <div
+        className="col-xs-9 text-right">
+        <div
+          className="huge"
+          style={
+            Object {
+              "fontSize": "40px",
+            }
+          }>
+          1
+        </div>
+        <div>
+          Panel
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Panel renders with panel-warning class when previous equals number 1`] = `
+<div
+  className="panel panel-warning">
+  <div
+    className="panel-heading">
+    <div
+      className="row">
+      <div
+        className="col-xs-3">
+        <i
+          className="fa fa-car fa-5x" />
+      </div>
+      <div
+        className="col-xs-9 text-right">
+        <div
+          className="huge"
+          style={
+            Object {
+              "fontSize": "40px",
+            }
+          }>
+          1
+        </div>
+        <div>
+          Panel
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

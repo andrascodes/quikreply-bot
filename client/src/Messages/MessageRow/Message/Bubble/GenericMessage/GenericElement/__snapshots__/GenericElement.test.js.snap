@@ -1,0 +1,32 @@
+exports[`GenericElement renders correctly 1`] = `
+<div
+  className="GenericElement">
+  <img
+    alt=""
+    className="GenericElementImage img-responsive"
+    src="https://www.google.com" />
+  <div
+    className="GenericElementTitleContainer GenericDataContainer text-left">
+    <div
+      className="GenericElementTitle">
+      Title
+    </div>
+    <div
+      className="GenericElementSubtitle">
+      Subtitle
+    </div>
+    <div
+      className="GenericElementDefaultAction GenericElementSubtitle">
+      www.google.com
+    </div>
+  </div>
+  <div
+    className="GenericElementButton GenericDataContainer text-center">
+    Btn title1
+  </div>
+  <div
+    className="GenericElementButton GenericDataContainer text-center">
+    Btn title2
+  </div>
+</div>
+`;

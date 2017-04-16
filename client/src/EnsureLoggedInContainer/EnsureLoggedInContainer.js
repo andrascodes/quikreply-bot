@@ -13,15 +13,17 @@ export const EnsureLoggedInContainer = withRouter(props => {
       }}/>
     )
   }
-  else {
-    if(props.location.pathname === '/login' || props.location.pathname === '/login/') {
-      return <Redirect to={{
+  else if(props.location.pathname === '/login' || props.location.pathname === '/login/') {
+    return (
+      <Redirect to={{
         pathname: '/',
         state: {
           from: props.location
         }
       }}/>
-    }
+    )
+  }
+  else {
     return props.children
   }
 })

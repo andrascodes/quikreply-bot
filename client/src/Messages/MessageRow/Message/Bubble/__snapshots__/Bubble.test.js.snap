@@ -1,0 +1,339 @@
+exports[`Bubble renders Attachment Bubbles correctly 1`] = `
+<div>
+  <div
+    className="Incoming Bubble ">
+    <img
+      alt=""
+      className="ImageMessage img-responsive"
+      src="https://www.google.com" />
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Attachment Bubbles correctly 2`] = `
+<div>
+  <div
+    className="Incoming Bubble ">
+    <div
+      className="MediaMessage AudioMessage">
+      <i
+        className="fa fa-volume-up" />
+       Audio message 
+      <a
+        href="https://www.google.com"
+        target="_blank">
+        <i
+          className="fa fa-download" />
+      </a>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Attachment Bubbles correctly 3`] = `
+<div>
+  <div
+    className="Incoming Bubble ">
+    <div
+      className="MediaMessage FileMessage">
+      <i
+        className="fa fa-file-o" />
+       File message 
+      <a
+        href="https://www.google.com"
+        target="_blank">
+        <i
+          className="fa fa-download" />
+      </a>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Attachment Bubbles correctly 4`] = `
+<div>
+  <div
+    className="Incoming Bubble ">
+    <div
+      className="MediaMessage VideoMessage">
+      <i
+        className="fa fa-video-camera" />
+       Video message 
+      <a
+        href="https://www.google.com"
+        target="_blank">
+        <i
+          className="fa fa-download" />
+      </a>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Button Bubble correctly 1`] = `
+<div>
+  <div
+    className="Outgoing Bubble ">
+    <div
+      className="ButtonMessage">
+      <div
+        className="ButtonMessageText ButtonDataContainer">
+        Message Text
+      </div>
+      <div
+        className="ButtonMessageButton ButtonDataContainer text-center">
+        Btn title1
+      </div>
+      <div
+        className="ButtonMessageButton ButtonDataContainer text-center">
+        Btn title2
+      </div>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Error tooltip correctly 1`] = `
+<div>
+  <div
+    className="Outgoing Bubble ErrorBubble"
+    data-tip="React tooltip">
+    <div
+      className="TextMessage">
+      Outgoing text message
+    </div>
+  </div>
+  <div
+    className="ErrorTooltip">
+    <div
+      className="__react_component_tooltip place-top type-dark "
+      data-id="tooltip">
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Bubble renders Generic Bubble correctly 1`] = `
+<div>
+  <div
+    className="Outgoing Bubble ">
+    <div
+      className="GenericMessage row">
+      <div
+        className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">
+        <button
+          className="GenericPagingButton btn disabled"
+          onClick={[Function]}>
+          <i
+            className="fa fa-chevron-left" />
+        </button>
+      </div>
+      <div
+        className="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+        <div
+          className="GenericElement">
+          <img
+            alt=""
+            className="GenericElementImage img-responsive"
+            src="https://www.google.com" />
+          <div
+            className="GenericElementTitleContainer GenericDataContainer text-left">
+            <div
+              className="GenericElementTitle">
+              Title1
+            </div>
+            <div
+              className="GenericElementSubtitle">
+              Subtitle1
+            </div>
+            <div
+              className="GenericElementDefaultAction GenericElementSubtitle">
+              www.google.com
+            </div>
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn1 title1
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn1 title2
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right">
+        <button
+          className="GenericPagingButton btn "
+          onClick={[Function]}>
+          <i
+            className="fa fa-chevron-right" />
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders List Bubble correctly 1`] = `
+<div>
+  <div
+    className="Outgoing Bubble ">
+    <div
+      className="ListMessage">
+      <div
+        className="ListElementContainer">
+        <div
+          className="ListElement row">
+          <div
+            className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+            <div
+              className="ListElementTitle">
+              Title 1
+            </div>
+            <div
+              className="ListElementSubtitle">
+              Subtitle 1
+            </div>
+            <div
+              className="ListElementDefaultAction ListElementSubtitle">
+              www.google.com
+            </div>
+            <div
+              className="ListElementButton">
+              ElemBtn 1
+            </div>
+          </div>
+          <div
+            className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+            <img
+              alt=""
+              className="ListElementImage"
+              src="https://www.google.com" />
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListElementContainer">
+        <div
+          className="ListElement row">
+          <div
+            className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+            <div
+              className="ListElementTitle">
+              Title 2
+            </div>
+            <div
+              className="ListElementSubtitle">
+              Subtitle 2
+            </div>
+            <div
+              className="ListElementDefaultAction ListElementSubtitle">
+              www.google.com
+            </div>
+            <div
+              className="ListElementButton">
+              ElemBtn 2
+            </div>
+          </div>
+          <div
+            className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+            <img
+              alt=""
+              className="ListElementImage"
+              src="https://www.google.com" />
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListButton text-center">
+        ListBtn
+      </div>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Location Bubble correctly 1`] = `
+<div>
+  <div
+    className="Incoming Bubble ">
+    <div
+      className="LocationMessage">
+      <a
+        className="LocationTitle"
+        href="https://www.google.com/maps/?q=42.34,-35.45"
+        target="_blank">
+        undefined:
+      </a>
+      <div
+        className="LocationCoordinates">
+        Latitude: 42.34
+        <br />
+        Longitude: -35.45
+      </div>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Quick Reply Bubble correctly 1`] = `
+<div>
+  <div
+    className="Outgoing Bubble ">
+    <div
+      className="QuickReplyMessage">
+      Quick Reply (Payload: PAYLOAD)
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders Unknown Bubble correctly 1`] = `
+<div>
+  <div
+    className="Outgoing Bubble ">
+    <div
+      className="UnknownMessage">
+      Unknown message placeholder
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders incoming Text Bubble correctly 1`] = `
+<div>
+  <div
+    className="Incoming Bubble ">
+    <div
+      className="TextMessage">
+      Incoming text message
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`Bubble renders outgoing Text Bubble correctly 1`] = `
+<div>
+  <div
+    className="Outgoing Bubble ">
+    <div
+      className="TextMessage">
+      Outgoing text message
+    </div>
+  </div>
+  
+</div>
+`;

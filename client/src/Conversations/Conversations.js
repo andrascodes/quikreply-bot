@@ -15,13 +15,13 @@ export class Conversations extends Component {
     super(props)
     
     this.state = {
-      conversations: undefined,
-      participant: '',
-      startDate: '',
-      endDate: '',
-      label: '',
-      errorLabel: '',
-      error: false
+      conversations: this.props.conversations || undefined,
+      participant: this.props.participant || '',
+      startDate: this.props.startDate || '',
+      endDate: this.props.endDate || '',
+      label: this.props.label || '',
+      errorLabel: this.props.errorLabel || '',
+      error: this.props.error || false
     }
   }
 

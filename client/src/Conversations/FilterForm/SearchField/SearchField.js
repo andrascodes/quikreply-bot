@@ -1,6 +1,10 @@
 import React from 'react'
 
 export const SearchField = props => {
+
+  if(!props.options) {
+    throw new Error(`The prop 'options' has to be defined, pass an empty array ([])`)
+  }
   
   const listOptions = props.options.map(person => <option key={person} value={person} />)
 

@@ -1,7 +1,5 @@
 import React from 'react'
 
-// import url from 'url';
-
 import './ListMessage.css'
 
 export const ListMessage = props => (

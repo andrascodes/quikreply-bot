@@ -1,0 +1,359 @@
+exports[`GenericMessage renders first element from elements by default 1`] = `
+<GenericMessage
+  attachment={
+    Object {
+      "payload": Object {
+        "elements": Array [
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn1 title1",
+              },
+              Object {
+                "title": "Btn1 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle1",
+            "title": "Title1",
+          },
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn2 title1",
+              },
+              Object {
+                "title": "Btn2 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle2",
+            "title": "Title2",
+          },
+        ],
+      },
+    }
+  }>
+  <div
+    className="GenericMessage row">
+    <div
+      className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">
+      <button
+        className="GenericPagingButton btn disabled"
+        onClick={[Function]}>
+        <i
+          className="fa fa-chevron-left" />
+      </button>
+    </div>
+    <div
+      className="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+      <Component
+        element={
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn1 title1",
+              },
+              Object {
+                "title": "Btn1 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle1",
+            "title": "Title1",
+          }
+        }
+        index={0}>
+        <div
+          className="GenericElement">
+          <img
+            alt=""
+            className="GenericElementImage img-responsive"
+            src="https://www.google.com" />
+          <div
+            className="GenericElementTitleContainer GenericDataContainer text-left">
+            <div
+              className="GenericElementTitle">
+              Title1
+            </div>
+            <div
+              className="GenericElementSubtitle">
+              Subtitle1
+            </div>
+            <div
+              className="GenericElementDefaultAction GenericElementSubtitle">
+              www.google.com
+            </div>
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn1 title1
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn1 title2
+          </div>
+        </div>
+      </Component>
+    </div>
+    <div
+      className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right">
+      <button
+        className="GenericPagingButton btn "
+        onClick={[Function]}>
+        <i
+          className="fa fa-chevron-right" />
+      </button>
+    </div>
+  </div>
+</GenericMessage>
+`;
+
+exports[`GenericMessage renders first element when clicked on previous button 1`] = `
+<GenericMessage
+  attachment={
+    Object {
+      "payload": Object {
+        "elements": Array [
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn1 title1",
+              },
+              Object {
+                "title": "Btn1 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle1",
+            "title": "Title1",
+          },
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn2 title1",
+              },
+              Object {
+                "title": "Btn2 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle2",
+            "title": "Title2",
+          },
+        ],
+      },
+    }
+  }>
+  <div
+    className="GenericMessage row">
+    <div
+      className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">
+      <button
+        className="GenericPagingButton btn disabled"
+        onClick={[Function]}>
+        <i
+          className="fa fa-chevron-left" />
+      </button>
+    </div>
+    <div
+      className="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+      <Component
+        element={
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn1 title1",
+              },
+              Object {
+                "title": "Btn1 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle1",
+            "title": "Title1",
+          }
+        }
+        index={0}>
+        <div
+          className="GenericElement">
+          <img
+            alt=""
+            className="GenericElementImage img-responsive"
+            src="https://www.google.com" />
+          <div
+            className="GenericElementTitleContainer GenericDataContainer text-left">
+            <div
+              className="GenericElementTitle">
+              Title1
+            </div>
+            <div
+              className="GenericElementSubtitle">
+              Subtitle1
+            </div>
+            <div
+              className="GenericElementDefaultAction GenericElementSubtitle">
+              www.google.com
+            </div>
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn1 title1
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn1 title2
+          </div>
+        </div>
+      </Component>
+    </div>
+    <div
+      className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right">
+      <button
+        className="GenericPagingButton btn "
+        onClick={[Function]}>
+        <i
+          className="fa fa-chevron-right" />
+      </button>
+    </div>
+  </div>
+</GenericMessage>
+`;
+
+exports[`GenericMessage renders second element when clicked on next button 1`] = `
+<GenericMessage
+  attachment={
+    Object {
+      "payload": Object {
+        "elements": Array [
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn1 title1",
+              },
+              Object {
+                "title": "Btn1 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle1",
+            "title": "Title1",
+          },
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn2 title1",
+              },
+              Object {
+                "title": "Btn2 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle2",
+            "title": "Title2",
+          },
+        ],
+      },
+    }
+  }>
+  <div
+    className="GenericMessage row">
+    <div
+      className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left">
+      <button
+        className="GenericPagingButton btn "
+        onClick={[Function]}>
+        <i
+          className="fa fa-chevron-left" />
+      </button>
+    </div>
+    <div
+      className="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+      <Component
+        element={
+          Object {
+            "buttons": Array [
+              Object {
+                "title": "Btn2 title1",
+              },
+              Object {
+                "title": "Btn2 title2",
+              },
+            ],
+            "default_action": Object {
+              "url": "https://www.google.com",
+            },
+            "image_url": "https://www.google.com",
+            "subtitle": "Subtitle2",
+            "title": "Title2",
+          }
+        }
+        index={1}>
+        <div
+          className="GenericElement">
+          <img
+            alt=""
+            className="GenericElementImage img-responsive"
+            src="https://www.google.com" />
+          <div
+            className="GenericElementTitleContainer GenericDataContainer text-left">
+            <div
+              className="GenericElementTitle">
+              Title2
+            </div>
+            <div
+              className="GenericElementSubtitle">
+              Subtitle2
+            </div>
+            <div
+              className="GenericElementDefaultAction GenericElementSubtitle">
+              www.google.com
+            </div>
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn2 title1
+          </div>
+          <div
+            className="GenericElementButton GenericDataContainer text-center">
+            Btn2 title2
+          </div>
+        </div>
+      </Component>
+    </div>
+    <div
+      className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right">
+      <button
+        className="GenericPagingButton btn disabled"
+        onClick={[Function]}>
+        <i
+          className="fa fa-chevron-right" />
+      </button>
+    </div>
+  </div>
+</GenericMessage>
+`;

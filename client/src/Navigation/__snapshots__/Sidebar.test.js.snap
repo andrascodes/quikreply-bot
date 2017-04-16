@@ -1,0 +1,24 @@
+exports[`Sidebar renders correctly 1`] = `
+<div
+  className="Sidebar">
+  <ul
+    className="Sidebar-Links">
+    <li>
+      <a
+        className="Link"
+        href="/"
+        onClick={[Function]}>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        className="Link"
+        href="/conversations"
+        onClick={[Function]}>
+        Conversations
+      </a>
+    </li>
+  </ul>
+</div>
+`;

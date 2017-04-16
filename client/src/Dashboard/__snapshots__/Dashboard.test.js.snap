@@ -1,0 +1,1152 @@
+exports[`Dashboard renders Error when state.error is truthy 1`] = `
+<Dashboard>
+  <Component>
+    <div
+      className="container-fluid">
+      <h2>
+        Error. 
+        Try again later!
+      </h2>
+    </div>
+  </Component>
+</Dashboard>
+`;
+
+exports[`Dashboard renders correctly 1`] = `
+<Dashboard>
+  <div
+    className="container-fluid">
+    <h1>
+      Dashboard
+    </h1>
+    <div
+      className="row Dashboard">
+      <div
+        className="UserChart Chart">
+        <h3
+          className="text-center">
+          Active Users By Month
+        </h3>
+        <ResponsiveContainer
+          debounce={0}
+          height="80%"
+          minHeight={360}
+          style={
+            Object {
+              "margin": "auto",
+            }
+          }
+          width="80%">
+          <div
+            className="recharts-responsive-container"
+            style={
+              Object {
+                "height": "80%",
+                "maxHeight": undefined,
+                "minHeight": 360,
+                "minWidth": undefined,
+                "width": "80%",
+              }
+            }>
+            <AnimationDecorator(ComposedDataDecorator(BarChart))
+              data={Array []}
+              height={0}
+              layout="horizontal"
+              margin={
+                Object {
+                  "bottom": 5,
+                  "left": 5,
+                  "right": 5,
+                  "top": 5,
+                }
+              }
+              stackOffset="none"
+              width={0} />
+            <ResizeDetector
+              handleHeight={true}
+              handleWidth={true}
+              onResize={[Function]}>
+              <div
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "visibility": "hidden",
+                    "zIndex": -1,
+                  }
+                }>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": 10,
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": 10,
+                      }
+                    } />
+                </div>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": "200%",
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "200%",
+                      }
+                    } />
+                </div>
+              </div>
+            </ResizeDetector>
+          </div>
+        </ResponsiveContainer>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-users"
+          label="Total Users"
+          number={0}>
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-users fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    0
+                  </div>
+                  <div>
+                    Total Users
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-user"
+          label="Active Users Today"
+          number={0}
+          previous={0}>
+          <div
+            className="panel panel-warning">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-user fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    0
+                  </div>
+                  <div>
+                    Active Users Today
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-user-circle-o"
+          label="Active Users This Month"
+          number={0}
+          previous={0}>
+          <div
+            className="panel panel-warning">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-user-circle-o fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    0
+                  </div>
+                  <div>
+                    Active Users This Month
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="MessageChart Chart col-lg-12 col-md-12">
+        <h3
+          className="text-center">
+          Delivered, Read, Undelivered Messages Ratio
+        </h3>
+        <ResponsiveContainer
+          debounce={0}
+          height="80%"
+          minHeight={360}
+          style={
+            Object {
+              "margin": "auto",
+            }
+          }
+          width="80%">
+          <div
+            className="recharts-responsive-container"
+            style={
+              Object {
+                "height": "80%",
+                "maxHeight": undefined,
+                "minHeight": 360,
+                "minWidth": undefined,
+                "width": "80%",
+              }
+            }>
+            <ComposedDataDecorator(PieChart)
+              height={0}
+              margin={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+              style={Object {}}
+              width={0}>
+              <PieChart
+                allComposedData={
+                  Array [
+                    Array [
+                      Object {
+                        "fill": "#31708f",
+                        "name": "Delivered and Read",
+                        "payload": Object {
+                          "name": "Delivered and Read",
+                          "value": 0,
+                        },
+                        "stroke": "#fff",
+                        "value": 0,
+                      },
+                      Object {
+                        "fill": "#31708f",
+                        "name": "Delivered, but Not Read",
+                        "payload": Object {
+                          "name": "Delivered, but Not Read",
+                          "value": 0,
+                        },
+                        "stroke": "#fff",
+                        "value": 0,
+                      },
+                      Object {
+                        "fill": "#31708f",
+                        "name": "Not Delivered",
+                        "payload": Object {
+                          "name": "Not Delivered",
+                          "value": 0,
+                        },
+                        "stroke": "#fff",
+                        "value": 0,
+                      },
+                    ],
+                  ]
+                }
+                height={0}
+                margin={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+                style={Object {}}
+                width={0} />
+            </ComposedDataDecorator(PieChart)>
+            <ResizeDetector
+              handleHeight={true}
+              handleWidth={true}
+              onResize={[Function]}>
+              <div
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "visibility": "hidden",
+                    "zIndex": -1,
+                  }
+                }>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": 10,
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": 10,
+                      }
+                    } />
+                </div>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": "200%",
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "200%",
+                      }
+                    } />
+                </div>
+              </div>
+            </ResizeDetector>
+          </div>
+        </ResponsiveContainer>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-lg-4 col-md-4" />
+      <div
+        className="col-lg-4 col-md-4">
+        <div
+          className="TotalErrors">
+          <Component
+            icon="fa-exclamation-triangle"
+            label="No. of message errors"
+            number={0}>
+            <div
+              className="panel panel-info">
+              <div
+                className="panel-heading">
+                <div
+                  className="row">
+                  <div
+                    className="col-xs-3">
+                    <i
+                      className="fa fa-exclamation-triangle fa-5x" />
+                  </div>
+                  <div
+                    className="col-xs-9 text-right">
+                    <div
+                      className="huge"
+                      style={
+                        Object {
+                          "fontSize": "40px",
+                        }
+                      }>
+                      0
+                    </div>
+                    <div>
+                      No. of message errors
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Component>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-4" />
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-comments"
+          label="Total Messages"
+          number={0}>
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-comments fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    0
+                  </div>
+                  <div>
+                    Total Messages
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-comment"
+          label="Avg. no. messages in a conversation"
+          number="0.00">
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-comment fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    0.00
+                  </div>
+                  <div>
+                    Avg. no. messages in a conversation
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-commenting"
+          label="Avg. length of a conversation"
+          number="">
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-commenting fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    } />
+                  <div>
+                    Avg. length of a conversation
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+    </div>
+  </div>
+</Dashboard>
+`;
+
+exports[`Dashboard renders correctly 2`] = `
+<Dashboard>
+  <div
+    className="container-fluid">
+    <h1>
+      Dashboard
+    </h1>
+    <div
+      className="row Dashboard">
+      <div
+        className="UserChart Chart">
+        <h3
+          className="text-center">
+          Active Users By Month
+        </h3>
+        <ResponsiveContainer
+          debounce={0}
+          height="80%"
+          minHeight={360}
+          style={
+            Object {
+              "margin": "auto",
+            }
+          }
+          width="80%">
+          <div
+            className="recharts-responsive-container"
+            style={
+              Object {
+                "height": "80%",
+                "maxHeight": undefined,
+                "minHeight": 360,
+                "minWidth": undefined,
+                "width": "80%",
+              }
+            }>
+            <AnimationDecorator(ComposedDataDecorator(BarChart))
+              data={
+                Array [
+                  Object {
+                    "count": 1,
+                    "month": "April",
+                  },
+                ]
+              }
+              height={0}
+              layout="horizontal"
+              margin={
+                Object {
+                  "bottom": 5,
+                  "left": 5,
+                  "right": 5,
+                  "top": 5,
+                }
+              }
+              stackOffset="none"
+              width={0} />
+            <ResizeDetector
+              handleHeight={true}
+              handleWidth={true}
+              onResize={[Function]}>
+              <div
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "visibility": "hidden",
+                    "zIndex": -1,
+                  }
+                }>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": 10,
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": 10,
+                      }
+                    } />
+                </div>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": "200%",
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "200%",
+                      }
+                    } />
+                </div>
+              </div>
+            </ResizeDetector>
+          </div>
+        </ResponsiveContainer>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-users"
+          label="Total Users"
+          number={1}>
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-users fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    1
+                  </div>
+                  <div>
+                    Total Users
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-user"
+          label="Active Users Today"
+          number={0}
+          previous={0}>
+          <div
+            className="panel panel-warning">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-user fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    0
+                  </div>
+                  <div>
+                    Active Users Today
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-user-circle-o"
+          label="Active Users This Month"
+          number={1}
+          previous={0}>
+          <div
+            className="panel panel-success">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-user-circle-o fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    1
+                  </div>
+                  <div>
+                    Active Users This Month
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="MessageChart Chart col-lg-12 col-md-12">
+        <h3
+          className="text-center">
+          Delivered, Read, Undelivered Messages Ratio
+        </h3>
+        <ResponsiveContainer
+          debounce={0}
+          height="80%"
+          minHeight={360}
+          style={
+            Object {
+              "margin": "auto",
+            }
+          }
+          width="80%">
+          <div
+            className="recharts-responsive-container"
+            style={
+              Object {
+                "height": "80%",
+                "maxHeight": undefined,
+                "minHeight": 360,
+                "minWidth": undefined,
+                "width": "80%",
+              }
+            }>
+            <ComposedDataDecorator(PieChart)
+              height={0}
+              margin={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+              style={Object {}}
+              width={0}>
+              <PieChart
+                allComposedData={
+                  Array [
+                    Array [
+                      Object {
+                        "fill": "#31708f",
+                        "name": "Delivered and Read",
+                        "payload": Object {
+                          "name": "Delivered and Read",
+                          "value": 16,
+                        },
+                        "stroke": "#fff",
+                        "value": 16,
+                      },
+                      Object {
+                        "fill": "#31708f",
+                        "name": "Delivered, but Not Read",
+                        "payload": Object {
+                          "name": "Delivered, but Not Read",
+                          "value": 0,
+                        },
+                        "stroke": "#fff",
+                        "value": 0,
+                      },
+                      Object {
+                        "fill": "#31708f",
+                        "name": "Not Delivered",
+                        "payload": Object {
+                          "name": "Not Delivered",
+                          "value": 1,
+                        },
+                        "stroke": "#fff",
+                        "value": 1,
+                      },
+                    ],
+                  ]
+                }
+                height={0}
+                margin={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+                style={Object {}}
+                width={0} />
+            </ComposedDataDecorator(PieChart)>
+            <ResizeDetector
+              handleHeight={true}
+              handleWidth={true}
+              onResize={[Function]}>
+              <div
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "visibility": "hidden",
+                    "zIndex": -1,
+                  }
+                }>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": 10,
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": 10,
+                      }
+                    } />
+                </div>
+                <div
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "visibility": "hidden",
+                      "zIndex": -1,
+                    }
+                  }>
+                  <div
+                    style={
+                      Object {
+                        "height": "200%",
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "200%",
+                      }
+                    } />
+                </div>
+              </div>
+            </ResizeDetector>
+          </div>
+        </ResponsiveContainer>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-lg-4 col-md-4" />
+      <div
+        className="col-lg-4 col-md-4">
+        <div
+          className="TotalErrors">
+          <Component
+            icon="fa-exclamation-triangle"
+            label="No. of message errors"
+            number={0}>
+            <div
+              className="panel panel-info">
+              <div
+                className="panel-heading">
+                <div
+                  className="row">
+                  <div
+                    className="col-xs-3">
+                    <i
+                      className="fa fa-exclamation-triangle fa-5x" />
+                  </div>
+                  <div
+                    className="col-xs-9 text-right">
+                    <div
+                      className="huge"
+                      style={
+                        Object {
+                          "fontSize": "40px",
+                        }
+                      }>
+                      0
+                    </div>
+                    <div>
+                      No. of message errors
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Component>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-4" />
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-comments"
+          label="Total Messages"
+          number={34}>
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-comments fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    34
+                  </div>
+                  <div>
+                    Total Messages
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-comment"
+          label="Avg. no. messages in a conversation"
+          number="5.67">
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-comment fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    5.67
+                  </div>
+                  <div>
+                    Avg. no. messages in a conversation
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+      <div
+        className="col-lg-4 col-md-4">
+        <Component
+          icon="fa-commenting"
+          label="Avg. length of a conversation"
+          number="00:08">
+          <div
+            className="panel panel-info">
+            <div
+              className="panel-heading">
+              <div
+                className="row">
+                <div
+                  className="col-xs-3">
+                  <i
+                    className="fa fa-commenting fa-5x" />
+                </div>
+                <div
+                  className="col-xs-9 text-right">
+                  <div
+                    className="huge"
+                    style={
+                      Object {
+                        "fontSize": "40px",
+                      }
+                    }>
+                    00:08
+                  </div>
+                  <div>
+                    Avg. length of a conversation
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+      </div>
+    </div>
+  </div>
+</Dashboard>
+`;

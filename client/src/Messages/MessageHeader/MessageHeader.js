@@ -28,3 +28,10 @@ export const MessageHeader = props => (
     </div>
   </div>
 )
+
+MessageHeader.PropTypes = {
+  filterState: React.PropTypes.object,
+  participant: React.PropTypes.string,
+  startDate: React.PropTypes.string,
+  label: React.PropTypes.string,
+}

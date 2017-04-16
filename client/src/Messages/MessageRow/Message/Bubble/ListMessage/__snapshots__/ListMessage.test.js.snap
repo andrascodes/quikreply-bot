@@ -1,0 +1,73 @@
+exports[`ListMessage renders correctly 1`] = `
+<div
+  className="ListMessage">
+  <div
+    className="ListElementContainer">
+    <div
+      className="ListElement row">
+      <div
+        className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+        <div
+          className="ListElementTitle">
+          Title 1
+        </div>
+        <div
+          className="ListElementSubtitle">
+          Subtitle 1
+        </div>
+        <div
+          className="ListElementDefaultAction ListElementSubtitle">
+          www.google.com
+        </div>
+        <div
+          className="ListElementButton">
+          ElemBtn 1
+        </div>
+      </div>
+      <div
+        className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+        <img
+          alt=""
+          className="ListElementImage"
+          src="https://www.google.com" />
+      </div>
+    </div>
+  </div>
+  <div
+    className="ListElementContainer">
+    <div
+      className="ListElement row">
+      <div
+        className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+        <div
+          className="ListElementTitle">
+          Title 2
+        </div>
+        <div
+          className="ListElementSubtitle">
+          Subtitle 2
+        </div>
+        <div
+          className="ListElementDefaultAction ListElementSubtitle">
+          www.google.com
+        </div>
+        <div
+          className="ListElementButton">
+          ElemBtn 2
+        </div>
+      </div>
+      <div
+        className="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+        <img
+          alt=""
+          className="ListElementImage"
+          src="https://www.google.com" />
+      </div>
+    </div>
+  </div>
+  <div
+    className="ListButton text-center">
+    ListBtn
+  </div>
+</div>
+`;
