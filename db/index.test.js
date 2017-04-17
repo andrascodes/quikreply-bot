@@ -4,8 +4,6 @@ const test = require('tape')
 const createDB = require('./')
 const { testDatabaseUrl } = require('../config/')
 
-const { closeConnection } = require('../test.setup.js')
-
 test('db', nest => {
   
   nest.test(`db: should be 'undefined' if databaseUrl is not passed`, assert => {
@@ -22,17 +20,20 @@ test('db', nest => {
     assert.end()
   })
   
-  nest.test(`db: should establish connection successfully or throw SequelizeConnectionError`, assert => {
+  nest.test(`db: should establish connection successfully or throw SequelizeConnectionError`, async assert => {
     // T2: should be defined if databaseUrl is defined
     const db = createDB(testDatabaseUrl)
-    db.sequelize.authenticate()
-    .then(result => {
+    
+    try {
+      await db.sequelize.authenticate()
       assert.pass()
-      closeConnection(db, assert.end)
-    })
-    .catch(error => {
+      db.sequelize.close()
+      assert.end()
+    }
+    catch(error) {
       assert.equal(error.name, 'SequelizeConnectionError')
-      closeConnection(db, assert.end)
-    })
+      db.sequelize.close()
+      assert.end()
+    }
   })
 })

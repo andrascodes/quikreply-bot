@@ -26,7 +26,7 @@ if (env === 'production') {
 }
 else if (env === 'test') {
   config.testDatabaseUrl = 'postgres://localhost:5432/testdb'
-  config.nlpApiUrl = 'https://qranalytics-nlp.herokuapp.com'
+  config.nlpApiUrl = 'http://localhost:5555'
 }
 else {
   config.databaseUrl = process.env.DATABASE_URL
