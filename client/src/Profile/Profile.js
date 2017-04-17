@@ -91,6 +91,21 @@ export class Profile extends Component {
         <div className="Profile">
           <div className="container-fluid">
             <h1>Profile</h1>
+            <div className="ApiTokenField ProfileForm">
+              <label htmlFor="ApiTokenInput">Your API token:</label>
+              <input 
+                id="ApiTokenInput"
+                className="form-control" 
+                type="text" 
+                placeholder="Readonly input here…" 
+                readOnly
+                defaultValue={localStorage.apiToken}
+                aria-describedby="ApiTokenHelpBlock"
+              />
+              <span id="ApiTokenHelpBlock" className="help-block">
+                You can use this token to make requests to the server when building the models for the NLP API.
+              </span>
+            </div>
             <form className="ProfileForm" role="form" onSubmit={this.handleSubmit}>
               <fieldset>
                 <div className="form-group">
