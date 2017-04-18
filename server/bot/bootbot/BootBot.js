@@ -40,7 +40,6 @@ class BootBot extends EventEmitter {
     this.server = this.app.listen(this.app.get('port'), () => {
       const portNum = this.app.get('port');
       console.log('BootBot running on port', portNum);
-      console.log(`Facebook Webhook running on localhost:${portNum}/webhook`);
       console.log(message);
     });
   }

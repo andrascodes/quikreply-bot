@@ -23,6 +23,8 @@ if (env === 'production') {
   config.databaseUrl = process.env.DATABASE_URL
   config.serverUrl = `${process.env.HEROKU_SERVER_URL}`
   config.nlpApiUrl = process.env.NLPAPI_URL
+  config.message = `Express app is listening at: ${process.env.HEROKU_SERVER_URL}\n` +
+                    `Facebook Webhook is listening at: ${process.env.HEROKU_SERVER_URL}/webhook`
 }
 else if (env === 'test') {
   config.testDatabaseUrl = 'postgres://localhost:5432/testdb'
@@ -33,6 +35,8 @@ else {
   process.env.PORT = process.env.SERVER_PORT
   config.serverUrl = `${process.env.LOCAL_SERVER_URL}:${process.env.PORT}`
   config.nlpApiUrl = process.env.NLPAPI_URL
+  config.message = `Express app is listening at: ${process.env.LOCAL_SERVER_URL}:${process.env.PORT}\n` +
+                    `Facebook Webhook is listening at: https://${process.env.TUNNEL_SUBDOMAIN}.localtunnel.me/webhook`
 }
 
 // Set if the DB should be Resynced on start

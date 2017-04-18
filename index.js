@@ -2,7 +2,7 @@
 
 const fetch = require('node-fetch')
 
-const { databaseUrl, nlpApiUrl, serverUrl, fbConfig, dbOptions, resyncDb, conversationTimeout } = require('./config')
+const { databaseUrl, nlpApiUrl, serverUrl, fbConfig, dbOptions, resyncDb, conversationTimeout, message } = require('./config')
 const db = require('./db')(databaseUrl)
 const nlpApiService = require('./lib/services/NlpApiService')(fetch, nlpApiUrl)
 const messageService = require('./lib/services/MessageService')(db, nlpApiService)
@@ -55,5 +55,5 @@ async function main({ port, db, dbOptions, botServer, serverUrl }) {
     }
   }
 
-  botServer.start(port, `Express app is listening at \n${serverUrl}`)
+  botServer.start(port, message)
 }

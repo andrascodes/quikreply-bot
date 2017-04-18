@@ -1,7 +1,6 @@
 #!/bin/bash
-SUBDOMAIN="qranalyticsbot"
 while :; do 
    date
-   ./node_modules/.bin/lt --port $SERVER_PORT --subdomain $SUBDOMAIN
+   ./node_modules/.bin/lt --port $SERVER_PORT --subdomain $TUNNEL_SUBDOMAIN
    sleep 30
 done
